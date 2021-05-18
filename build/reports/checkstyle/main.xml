@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.29">
+<file name="C:\Users\Arjun Singh\IdeaProjects\SalesPrice\src\main\java\com\items\salesprice\CommandLineInput.java">
+<error line="3" column="57" severity="warning" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+</file>
+<file name="C:\Users\Arjun Singh\IdeaProjects\SalesPrice\src\main\java\com\items\salesprice\ParserValidator.java">
+<error line="5" severity="warning" message="&apos;METHOD_DEF&apos; should be separated from previous statement." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+</file>
+</checkstyle>

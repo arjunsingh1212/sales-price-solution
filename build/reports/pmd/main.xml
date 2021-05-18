@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.26.0" timestamp="2021-05-19T03:10:26.837">
+<file name="C:\Users\Arjun Singh\IdeaProjects\SalesPrice\src\main\java\com\items\salesprice\CommandLineInput.java">
+<violation beginline="3" endline="14" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.items.salesprice" class="CommandLineInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="3" endline="14" begincolumn="8" endcolumn="1" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.items.salesprice" class="CommandLineInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="5" endline="5" begincolumn="25" endcolumn="34" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.items.salesprice" class="CommandLineInput" method="parse" variable="str" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'str' is not assigned and could be declared final
+</violation>
+<violation beginline="5" endline="8" begincolumn="10" endcolumn="3" rule="CommentRequired" ruleset="Documentation" package="com.items.salesprice" class="CommandLineInput" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="5" endline="8" begincolumn="10" endcolumn="3" rule="MissingOverride" ruleset="Best Practices" package="com.items.salesprice" class="CommandLineInput" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#missingoverride" priority="3">
+The method 'parse(String)' is missing an @Override annotation.
+</violation>
+<violation beginline="6" endline="6" begincolumn="5" endcolumn="34" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.items.salesprice" class="CommandLineInput" method="parse" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'dummy' could be declared final
+</violation>
+<violation beginline="7" endline="7" begincolumn="5" endcolumn="17" rule="UnnecessaryLocalBeforeReturn" ruleset="Code Style" package="com.items.salesprice" class="CommandLineInput" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#unnecessarylocalbeforereturn" priority="3">
+Consider simply returning the value vs storing it in local variable 'dummy'
+</violation>
+<violation beginline="10" endline="10" begincolumn="27" endcolumn="43" rule="UseVarargs" ruleset="Best Practices" package="com.items.salesprice" class="CommandLineInput" method="validate" variable="strArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#usevarargs" priority="4">
+Consider using varargs for methods or constructors which take an array the last parameter.
+</violation>
+<violation beginline="10" endline="10" begincolumn="27" endcolumn="43" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.items.salesprice" class="CommandLineInput" method="validate" variable="strArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'strArray' is not assigned and could be declared final
+</violation>
+<violation beginline="10" endline="13" begincolumn="10" endcolumn="3" rule="CommentRequired" ruleset="Documentation" package="com.items.salesprice" class="CommandLineInput" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="10" endline="13" begincolumn="10" endcolumn="3" rule="MissingOverride" ruleset="Best Practices" package="com.items.salesprice" class="CommandLineInput" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#missingoverride" priority="3">
+The method 'validate(String)' is missing an @Override annotation.
+</violation>
+<violation beginline="11" endline="11" begincolumn="5" endcolumn="25" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.items.salesprice" class="CommandLineInput" method="validate" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'dummy' could be declared final
+</violation>
+<violation beginline="12" endline="12" begincolumn="5" endcolumn="17" rule="UnnecessaryLocalBeforeReturn" ruleset="Code Style" package="com.items.salesprice" class="CommandLineInput" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#unnecessarylocalbeforereturn" priority="3">
+Consider simply returning the value vs storing it in local variable 'dummy'
+</violation>
+</file>
+<file name="C:\Users\Arjun Singh\IdeaProjects\SalesPrice\src\main\java\com\items\salesprice\ParserValidator.java">
+<violation beginline="3" endline="6" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.items.salesprice" class="ParserValidator" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="4" endline="4" begincolumn="3" endcolumn="29" rule="CommentRequired" ruleset="Documentation" package="com.items.salesprice" class="ParserValidator" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="5" endline="5" begincolumn="20" endcolumn="36" rule="UseVarargs" ruleset="Best Practices" package="com.items.salesprice" class="ParserValidator" method="validate" variable="strArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#usevarargs" priority="4">
+Consider using varargs for methods or constructors which take an array the last parameter.
+</violation>
+<violation beginline="5" endline="5" begincolumn="3" endcolumn="38" rule="CommentRequired" ruleset="Documentation" package="com.items.salesprice" class="ParserValidator" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+</file>
+<configerror rule="LoosePackageCoupling" msg="No packages or classes specified"/>
+</pmd>
