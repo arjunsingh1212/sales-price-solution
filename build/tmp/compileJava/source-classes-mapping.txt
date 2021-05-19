@@ -2,3 +2,11 @@ com/items/salesprice/CommandLineInput.java
  com.items.salesprice.CommandLineInput
 com/items/salesprice/ParserValidator.java
  com.items.salesprice.ParserValidator
+com/items/salesprice/Item.java
+ com.items.salesprice.Item
+com/items/salesprice/ItemHandler.java
+ com.items.salesprice.ItemHandler
+com/items/salesprice/ItemSalesPriceHandler.java
+ com.items.salesprice.ItemSalesPriceHandler
+com/items/salesprice/ItemSalesPrice.java
+ com.items.salesprice.ItemSalesPrice

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.items.salesprice.ItemTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-05-19T03:49:20" hostname="MY-SYSTEM" time="0.147">
+  <properties/>
+  <testcase name="priceTest()" classname="com.items.salesprice.ItemTest" time="0.106"/>
+  <testcase name="taxTest()" classname="com.items.salesprice.ItemTest" time="0.028"/>
+  <testcase name="typeTest()" classname="com.items.salesprice.ItemTest" time="0.002"/>
+  <testcase name="quantityTest()" classname="com.items.salesprice.ItemTest" time="0.002"/>
+  <testcase name="nameTest()" classname="com.items.salesprice.ItemTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
