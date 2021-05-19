@@ -13,15 +13,15 @@ public class ItemSalesPriceTest {
     salesprice = new ItemSalesPrice();
   }
 
-  @Test
-  void extractOptionsValuesTest() {
-    assertEquals();
-  }
-  void calculateTaxTest() {
-    assertEquals();
-  }
-  void displayDetailsTest() {
-    assertEquals();
-  }
+//  @Test
+//  void extractOptionsValuesTest() {
+//    assertEquals();
+//  }
+//  void calculateTaxTest() {
+//    assertEquals();
+//  }
+//  void displayDetailsTest() {
+//    assertEquals();
+//  }
 
 }
