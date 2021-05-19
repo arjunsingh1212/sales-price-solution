@@ -8,5 +8,7 @@ com/items/salesprice/ItemTest.java
  com.items.salesprice.ItemTest
 com/assignment1/parser/ParserTest.java
  com.assignment1.parser.ParserTest
+ com.assignment1.parser.ParserTest$AcceptedTests
+ com.assignment1.parser.ParserTest$ExceptionTests
 com/assignment1/item/ItemTest.java
  com.assignment1.item.ItemTest

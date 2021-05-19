@@ -5,56 +5,189 @@ import static org.junit.jupiter.api.Assertions.*;
 import com.assignment1.item.Item;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 
 class ParserTest {
 
-  private Parser parserObj;
+  private Parsable parserObj;
 
   @BeforeEach
   void createObj() {
     parserObj = new CommandLineParser();
   }
 
-  @Test
-  @DisplayName("Simple input test")
-  void parseTest1() {
-    Item expectedItem = new Item("Book",50,3,"imported");
-    Item actual = parserObj.parse("-name Book -price 50 -quantity 3 -type imported");
-    assertEquals(expectedItem.toString(),actual.toString(),"Should parse correctly");
+  @Nested
+  class AcceptedTests {
+    @Test
+    @DisplayName("Simple input test")
+    void parseTest1() {
+      Item expectedItem = new Item("Book", 50, 3, "imported");
+      Item actual = parserObj.parse("-name Book -price 50 -quantity 3 -type imported");
+      assertEquals(expectedItem.toString(), actual.toString(), "Should parse correctly");
+    }
+
+    @Test
+    @DisplayName("Input with 2 words in name")
+    void parseTest2() {
+      Item expectedItem = new Item("Note Book", 50, 3, "imported");
+      Item actual = parserObj.parse("-name Note Book -price 50 -quantity 3 -type imported");
+      assertEquals(expectedItem.toString(), actual.toString(), "Should parse correctly");
+    }
+
+    @Test
+    @DisplayName("Input with multiple words in name")
+    void parseTest3() {
+      Item expectedItem = new Item("Rough Note Book", 50, 3, "imported");
+      Item actual = parserObj.parse("-name Rough Book -price 50 -quantity 3 -type imported");
+      assertEquals(expectedItem.toString(), actual.toString(), "Should parse correctly");
+    }
+
+    @Test
+    @DisplayName("Input with no explicit price option")
+    void parseTest4() {
+      Item expectedItem = new Item("Book", 0, 3, "imported");
+      Item actual = parserObj.parse("-name Book -quantity 3 -type raw");
+      assertEquals(expectedItem.toString(), actual.toString(), "Should parse correctly");
+    }
+
+    @Test
+    @DisplayName("Input with no explicit quantity option")
+    void parseTest() {
+      Item expectedItem = new Item("Book", 50, 1, "imported");
+      Item actual = parserObj.parse("-name Book -price 50 -type imported");
+      assertEquals(expectedItem.toString(), actual.toString(), "Should parse correctly");
+    }
   }
 
-  @Test
-  @DisplayName("Input with 2 words in name")
-  void parseTest2() {
-    Item expectedItem = new Item("Note Book",50,3,"imported");
-    Item actual = parserObj.parse("-name Note Book -price 50 -quantity 3 -type imported");
-    assertEquals(expectedItem.toString(),actual.toString(),"Should parse correctly");
-  }
+  @Nested
+  class ExceptionTests {
+    @Test
+    @DisplayName("name option missing")
+    void parseTest1() {
+      Exception except = assertThrows(RuntimeException.class, () -> parserObj.parse("-price 50 -quantity 3 -type imported"));
+      String actualMessage = except.getMessage();
+      String expectedMessage = "MissingName";
+      assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
+    }
 
-  @Test
-  @DisplayName("Input with multiple words in name")
-  void parseTest3() {
-    Item expectedItem = new Item("Rough Note Book",50,3,"imported");
-    Item actual = parserObj.parse("-name Rough Book -price 50 -quantity 3 -type imported");
-    assertEquals(expectedItem.toString(),actual.toString(),"Should parse correctly");
-  }
+    @Test
+    @DisplayName("type option missing")
+    void parseTest2() {
+      Exception except = assertThrows(RuntimeException.class, () -> parserObj.parse("-name Book -price 50 -quantity 3"));
+      String actualMessage = except.getMessage();
+      String expectedMessage = "MissingType";
+      assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
+    }
 
-  @Test
-  @DisplayName("Input with no explicit price option")
-  void parseTest4() {
-    Item expectedItem = new Item("Book",0,3,"imported");
-    Item actual = parserObj.parse("-name Book -quantity 3 -type raw");
-    assertEquals(expectedItem.toString(),actual.toString(),"Should parse correctly");
-  }
+    @Test
+    @DisplayName("incorrect positioning of name option")
+    void parseTest3() {
+      Exception except = assertThrows(RuntimeException.class, () -> parserObj.parse("-price 50 -name Book -quantity 3 -type imported"));
+      String actualMessage = except.getMessage();
+      String expectedMessage = "IncorrectPositioningNameException";
+      assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
+    }
 
-  @Test
-  @DisplayName("Input with no explicit quantity option")
-  void parseTest() {
-    Item expectedItem = new Item("Book",50,1,"imported");
-    Item actual = parserObj.parse("-name Book -price 50 -type imported");
-    assertEquals(expectedItem.toString(),actual.toString(),"Should parse correctly");
-  }
+    @Test
+    @DisplayName("quantity zero")
+    void parseTest4() {
+      Exception except = assertThrows(RuntimeException.class, () -> parserObj.parse("-name Book -price 50 -quantity 0 -type imported"));
+      String actualMessage = except.getMessage();
+      String expectedMessage = "ZeroQuantityException";
+      assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
+    }
 
+    @Test
+    @DisplayName("Negative price")
+    void parseTest5() {
+      Exception except = assertThrows(RuntimeException.class, () -> parserObj.parse("-name Book -price -50 -quantity 3 -type imported"));
+      String actualMessage = except.getMessage();
+      String expectedMessage = "NegativePriceException";
+      assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
+    }
+
+    @Test
+    @DisplayName("Blank value given")
+    void parseTest6() {
+      Exception except = assertThrows(RuntimeException.class, () -> parserObj.parse("-name Book -price -quantity 3 -type imported"));
+      String actualMessage = except.getMessage();
+      String expectedMessage = "BlankValueException";
+      assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
+    }
+
+    @Test
+    @DisplayName("Quantity datatype")
+    void parseTest7() {
+      Exception except = assertThrows(RuntimeException.class, () -> parserObj.parse("-name Book -price 50 -quantity 3.5 -type imported"));
+      String actualMessage = except.getMessage();
+      String expectedMessage = "QuantityFormatException";
+      assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
+    }
+
+    @Test
+    @DisplayName("Price datatype")
+    void parseTest8() {
+      Exception except = assertThrows(RuntimeException.class, () -> parserObj.parse("-name Book -price Hundred -quantity 3 -type imported"));
+      String actualMessage = except.getMessage();
+      String expectedMessage = "PriceFormatException";
+      assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
+    }
+
+    @Test
+    @DisplayName("type values wrong")
+    void parseTest9() {
+      Exception except = assertThrows(RuntimeException.class, () -> parserObj.parse("-name Book -price 50 -quantity 3 -type import"));
+      String actualMessage = except.getMessage();
+      String expectedMessage = "TypeFormatException";
+      assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
+    }
+
+    @Test
+    @DisplayName("name value not correct format")
+    void parseTest10() {
+      Exception except = assertThrows(RuntimeException.class, () -> parserObj.parse("-name 1234 -price 50 -quantity 3 -type import"));
+      String actualMessage = except.getMessage();
+      String expectedMessage = "NameFormatException";
+      assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
+    }
+
+    @Test
+    @DisplayName("options repeated")
+    void parseTest11() {
+      Exception except = assertThrows(RuntimeException.class, () -> parserObj.parse("-name Book -price 50 -price 50 -quantity 3 -type imported"));
+      String actualMessage = except.getMessage();
+      String expectedMessage = "RepeatedOptionException";
+      assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
+    }
+
+    @Test
+    @DisplayName("unrecognized Options found")
+    void parseTest12() {
+      Exception except = assertThrows(RuntimeException.class, () -> parserObj.parse("-name Book -pricing 50 -quantity 3 -type imported"));
+      String actualMessage = except.getMessage();
+      String expectedMessage = "UnrecognizedOptionException";
+      assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
+    }
+
+    @Test
+    @DisplayName("something is wrong with input format")
+    void parseTest13() {
+      Exception except = assertThrows(RuntimeException.class, () -> parserObj.parse("-name Book -price 50 -quantity 3 -type imported Hi Hello"));
+      String actualMessage = except.getMessage();
+      String expectedMessage = "IncorrectInputFormatException";
+      assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
+    }
+
+    @Test
+    @DisplayName("unnecessary or extra options or values in input")
+    void parseTest14() {
+      Exception except = assertThrows(RuntimeException.class, () -> parserObj.parse("-name Book -price 50 -quantity 3 -type imported -priority high"));
+      String actualMessage = except.getMessage();
+      String expectedMessage = "UnnecessaryOptionValueException";
+      assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
+    }
+  }
 }
+

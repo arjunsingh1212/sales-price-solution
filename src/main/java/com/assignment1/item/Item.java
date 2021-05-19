@@ -61,4 +61,26 @@ public class Item {
   public void setTax(double tax) {
     this.tax = tax;
   }
+
+  public double calculateTax() {
+    switch (type) {
+      case "raw":
+        tax = 0.125 * price;
+        break;
+      case "manufactured":
+        tax = 0.125 * price + 0.02 * (price + 0.125 * price);
+        break;
+      case "imported":
+        double importDuty = 0.1 * price;
+        if (price + importDuty <= 100) {
+          tax = importDuty + 5;
+        } else if (price + importDuty > 100 && price + importDuty <= 200) {
+          tax = importDuty + 10;
+        } else if (price + importDuty > 200) {
+          tax = importDuty + 0.05 * (price + importDuty);
+        }
+        break;
+    }
+    return tax;
+  }
 }

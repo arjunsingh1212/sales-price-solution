@@ -10,11 +10,13 @@ com/items/salesprice/ItemSalesPriceHandler.java
  com.items.salesprice.ItemSalesPriceHandler
 com/items/salesprice/ItemSalesPrice.java
  com.items.salesprice.ItemSalesPrice
-com/assignment1/parser/Validator.java
- com.assignment1.parser.Validator
 com/assignment1/item/Item.java
  com.assignment1.item.Item
 com/assignment1/parser/CommandLineParser.java
  com.assignment1.parser.CommandLineParser
-com/assignment1/parser/Parser.java
- com.assignment1.parser.Parser
+com/assignment1/parser/Valid.java
+ com.assignment1.parser.Valid
+com/assignment1/parser/Validity.java
+ com.assignment1.parser.Validity
+com/assignment1/parser/Parsable.java
+ com.assignment1.parser.Parsable

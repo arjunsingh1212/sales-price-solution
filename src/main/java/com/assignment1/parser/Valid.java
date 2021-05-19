@@ -1,5 +1,5 @@
 package com.assignment1.parser;
 
-public interface Validator {
+public interface Valid {
   boolean validate(String[] args);
 }
