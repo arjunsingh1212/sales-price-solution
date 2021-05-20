@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CommandLineParser.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SalesPrice</a> &gt; <a href="index.source.html" class="el_package">com.assignment1.parser</a> &gt; <span class="el_source">CommandLineParser.java</span></div><h1>CommandLineParser.java</h1><pre class="source lang-java linenums">package com.assignment1.parser;
+
+import com.assignment1.item.Item;
+
+public class CommandLineParser implements Parsable {
+  private final Valid validObj;
+
+<span class="nc" id="L8">  public CommandLineParser() {</span>
+<span class="nc" id="L9">    validObj = new Validity();</span>
+<span class="nc" id="L10">  }</span>
+
+<span class="nc" id="L12">  public CommandLineParser(Valid validObj) {</span>
+<span class="nc" id="L13">    this.validObj = validObj;</span>
+<span class="nc" id="L14">  }</span>
+
+  @Override
+  public Item parse(String input) throws RuntimeException {
+<span class="nc" id="L18">    Item item = new Item();</span>
+<span class="nc" id="L19">    String[] args = input.split(&quot;\\s&quot;);</span>
+<span class="nc" id="L20">    boolean isValid = validObj.validate(args);</span>
+<span class="nc bnc" id="L21" title="All 2 branches missed.">    if (isValid) {</span>
+<span class="nc" id="L22">      String nameValue = &quot;&quot;;</span>
+<span class="nc" id="L23">      double priceValue = 0;</span>
+<span class="nc" id="L24">      int quantityValue = 0;</span>
+<span class="nc" id="L25">      String typeValue = &quot;&quot;;</span>
+<span class="nc" id="L26">      int nameEndPointer = 0;</span>
+<span class="nc bnc" id="L27" title="All 2 branches missed.">      for (int i = 1; i &lt; args.length; i++) {</span>
+<span class="nc bnc" id="L28" title="All 2 branches missed.">        if (args[i].charAt(0) != '-')</span>
+<span class="nc" id="L29">          nameValue += args[i];</span>
+        else {
+<span class="nc" id="L31">          nameEndPointer = i;</span>
+<span class="nc" id="L32">          break;</span>
+        }
+      }
+
+<span class="nc bnc" id="L36" title="All 2 branches missed.">      for (int i = nameEndPointer; i &lt; args.length; i++) {</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        if (args[i].equals(&quot;-price&quot;)) {</span>
+<span class="nc" id="L38">          priceValue = Double.parseDouble(args[i + 1]);</span>
+        }
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        if (args[i].equals(&quot;quantity&quot;)) {</span>
+<span class="nc" id="L41">          quantityValue = Integer.parseInt(args[i + 1]);</span>
+        }
+<span class="nc bnc" id="L43" title="All 2 branches missed.">        if (args[i].equals(&quot;type&quot;)) {</span>
+<span class="nc" id="L44">          typeValue = args[i + 1];</span>
+        }
+      }
+
+<span class="nc" id="L48">      item.setName(nameValue);</span>
+<span class="nc" id="L49">      item.setPrice(priceValue);</span>
+<span class="nc" id="L50">      item.setQuantity(quantityValue);</span>
+<span class="nc" id="L51">      item.setType(typeValue);</span>
+
+<span class="nc" id="L53">      return item;</span>
+    } else {
+<span class="nc" id="L55">      return null;</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

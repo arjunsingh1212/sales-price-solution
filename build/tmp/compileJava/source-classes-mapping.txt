@@ -1,22 +1,14 @@
-com/items/salesprice/CommandLineInput.java
- com.items.salesprice.CommandLineInput
-com/items/salesprice/ParserValidator.java
- com.items.salesprice.ParserValidator
-com/items/salesprice/Item.java
- com.items.salesprice.Item
-com/items/salesprice/ItemHandler.java
- com.items.salesprice.ItemHandler
-com/items/salesprice/ItemSalesPriceHandler.java
- com.items.salesprice.ItemSalesPriceHandler
-com/items/salesprice/ItemSalesPrice.java
- com.items.salesprice.ItemSalesPrice
+com/assignment1/parser/Validity.java
+ com.assignment1.parser.Validity
+com/assignment1/userinterface/UserInterfaceHandler.java
+ com.assignment1.userinterface.UserInterfaceHandler
+com/assignment1/parser/Valid.java
+ com.assignment1.parser.Valid
 com/assignment1/item/Item.java
  com.assignment1.item.Item
 com/assignment1/parser/CommandLineParser.java
  com.assignment1.parser.CommandLineParser
-com/assignment1/parser/Valid.java
- com.assignment1.parser.Valid
-com/assignment1/parser/Validity.java
- com.assignment1.parser.Validity
+com/assignment1/userinterface/UserInterface.java
+ com.assignment1.userinterface.UserInterface
 com/assignment1/parser/Parsable.java
  com.assignment1.parser.Parsable

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.assignment1.parser.ParserTest$AcceptedTests" tests="5" skipped="0" failures="5" errors="0" timestamp="2021-05-19T20:32:34" hostname="MY-SYSTEM" time="0.03">
+<testsuite name="com.assignment1.parser.ParserTest$AcceptedTests" tests="5" skipped="0" failures="5" errors="0" timestamp="2021-05-20T03:34:40" hostname="MY-SYSTEM" time="0.04">
   <properties/>
-  <testcase name="Input with no explicit quantity option" classname="com.assignment1.parser.ParserTest$AcceptedTests" time="0.002">
-    <failure message="org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;com.assignment1.item.Item@4bb69250&gt; but was: &lt;com.assignment1.item.Item@2b82c6a2&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;com.assignment1.item.Item@4bb69250&gt; but was: &lt;com.assignment1.item.Item@2b82c6a2&gt;
+  <testcase name="Input with no explicit quantity option" classname="com.assignment1.parser.ParserTest$AcceptedTests" time="0.024">
+    <failure message="org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest(ParserTest.java:60)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
+	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest(ParserTest.java:57)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -110,12 +109,11 @@
 	at java.base/java.lang.Thread.run(Thread.java:834)
 </failure>
   </testcase>
-  <testcase name="Simple input test" classname="com.assignment1.parser.ParserTest$AcceptedTests" time="0.003">
-    <failure message="org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;com.assignment1.item.Item@50ef8656&gt; but was: &lt;com.assignment1.item.Item@1b3d66ef&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;com.assignment1.item.Item@50ef8656&gt; but was: &lt;com.assignment1.item.Item@1b3d66ef&gt;
+  <testcase name="Simple input test" classname="com.assignment1.parser.ParserTest$AcceptedTests" time="0.004">
+    <failure message="org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
 	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest1(ParserTest.java:28)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -219,12 +217,11 @@
 	at java.base/java.lang.Thread.run(Thread.java:834)
 </failure>
   </testcase>
-  <testcase name="Input with 2 words in name" classname="com.assignment1.parser.ParserTest$AcceptedTests" time="0.014">
-    <failure message="org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;com.assignment1.item.Item@8cac29c&gt; but was: &lt;com.assignment1.item.Item@344ae444&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;com.assignment1.item.Item@8cac29c&gt; but was: &lt;com.assignment1.item.Item@344ae444&gt;
+  <testcase name="Input with 2 words in name" classname="com.assignment1.parser.ParserTest$AcceptedTests" time="0.001">
+    <failure message="org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
 	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest2(ParserTest.java:36)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -329,12 +326,11 @@
 </failure>
   </testcase>
   <testcase name="Input with multiple words in name" classname="com.assignment1.parser.ParserTest$AcceptedTests" time="0.001">
-    <failure message="org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;com.assignment1.item.Item@4a35ca37&gt; but was: &lt;com.assignment1.item.Item@293e6ff1&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;com.assignment1.item.Item@4a35ca37&gt; but was: &lt;com.assignment1.item.Item@293e6ff1&gt;
+    <failure message="org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest3(ParserTest.java:44)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
+	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest3(ParserTest.java:43)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -438,12 +434,11 @@
 </failure>
   </testcase>
   <testcase name="Input with no explicit price option" classname="com.assignment1.parser.ParserTest$AcceptedTests" time="0.002">
-    <failure message="org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;com.assignment1.item.Item@31471df4&gt; but was: &lt;com.assignment1.item.Item@6bdcbdca&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;com.assignment1.item.Item@31471df4&gt; but was: &lt;com.assignment1.item.Item@6bdcbdca&gt;
+    <failure message="org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest4(ParserTest.java:52)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
+	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest4(ParserTest.java:50)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

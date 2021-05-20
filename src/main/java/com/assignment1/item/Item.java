@@ -62,6 +62,10 @@ public class Item {
     this.tax = tax;
   }
 
+  public boolean comparison(Item obj) {
+    return name.equals(obj.name) && price == obj.price && quantity == obj.quantity && type.equals(obj.type);
+  }
+
   public double calculateTax() {
     switch (type) {
       case "raw":

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserInterface.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SalesPrice</a> &gt; <a href="index.source.html" class="el_package">com.assignment1.userinterface</a> &gt; <span class="el_source">UserInterface.java</span></div><h1>UserInterface.java</h1><pre class="source lang-java linenums">package com.assignment1.userinterface;
+
+import com.assignment1.item.Item;
+
+import java.util.Scanner;
+
+<span class="fc" id="L7">public class UserInterface implements UserInterfaceHandler {</span>
+  @Override
+  public String takeInput() {
+<span class="nc" id="L10">    String str = &quot;&quot;;</span>
+<span class="nc" id="L11">    Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L12">    System.out.print(&quot;Enter Name: &quot;);</span>
+<span class="nc" id="L13">    String name = sc.nextLine();</span>
+<span class="nc bnc" id="L14" title="All 2 branches missed.">    if (!name.equals(&quot;&quot;)) str += &quot;-name &quot; + name;</span>
+<span class="nc" id="L15">    System.out.print(&quot;Enter Price: &quot;);</span>
+<span class="nc" id="L16">    String price = sc.nextLine();</span>
+<span class="nc bnc" id="L17" title="All 2 branches missed.">    if (!price.equals(&quot;&quot;)) str += &quot;-price &quot; + price;</span>
+<span class="nc" id="L18">    System.out.print(&quot;Enter Quantity: &quot;);</span>
+<span class="nc" id="L19">    String quantity = sc.nextLine();</span>
+<span class="nc bnc" id="L20" title="All 2 branches missed.">    if (!quantity.equals(&quot;&quot;)) str += &quot;-quantity &quot; + quantity;</span>
+<span class="nc" id="L21">    String type = sc.nextLine();</span>
+<span class="nc bnc" id="L22" title="All 2 branches missed.">    if (!type.equals(&quot;&quot;)) str += &quot;-type &quot; + type;</span>
+
+<span class="nc" id="L24">    return str;</span>
+  }
+
+  @Override
+  public boolean showUsageMessage() {
+<span class="fc" id="L29">    System.out.println(&quot;-name &lt;first item name&gt;\n&quot; +</span>
+            &quot;-price &lt;price of first item&gt;\n&quot; +
+            &quot;-quantity &lt;quantity of first item&gt;\n&quot; +
+            &quot;-type &lt;type of first item&gt;&quot;);
+<span class="fc" id="L33">    return true;</span>
+  }
+
+  @Override
+  public boolean giveOutput(Item[] itemArr) {
+<span class="fc" id="L38">    System.out.println(&quot;item name\t item prize\t sales tax liability per item\t final prize (sales tax + item prize)&quot;);</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">    for(int i=0;i&lt;itemArr.length;i++)</span>
+    {
+<span class="fc" id="L41">      System.out.println(itemArr[i].getName() + &quot;\t&quot; + itemArr[i].getPrice() + &quot;\t&quot; +itemArr[i].getTax() +&quot;\t&quot; + itemArr[i].getQuantity()*(itemArr[i].getPrice()+itemArr[i].getTax()));</span>
+    }
+<span class="fc" id="L43">    return true;</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

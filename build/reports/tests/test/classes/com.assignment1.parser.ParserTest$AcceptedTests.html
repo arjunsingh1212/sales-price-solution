@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.022s</div>
+<div class="counter">0.032s</div>
 <p>duration</p>
 </div>
 </td>
@@ -73,12 +73,11 @@
 <a name="parseTest()"></a>
 <h3 class="failures">Input with no explicit quantity option</h3>
 <span class="code">
-<pre>org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;com.assignment1.item.Item@4bb69250&gt; but was: &lt;com.assignment1.item.Item@2b82c6a2&gt;
+<pre>org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest(ParserTest.java:60)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
+	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest(ParserTest.java:57)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -186,11 +185,10 @@
 <a name="parseTest1()"></a>
 <h3 class="failures">Simple input test</h3>
 <span class="code">
-<pre>org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;com.assignment1.item.Item@50ef8656&gt; but was: &lt;com.assignment1.item.Item@1b3d66ef&gt;
+<pre>org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
 	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest1(ParserTest.java:28)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -299,11 +297,10 @@
 <a name="parseTest2()"></a>
 <h3 class="failures">Input with 2 words in name</h3>
 <span class="code">
-<pre>org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;com.assignment1.item.Item@8cac29c&gt; but was: &lt;com.assignment1.item.Item@344ae444&gt;
+<pre>org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
 	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest2(ParserTest.java:36)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -412,12 +409,11 @@
 <a name="parseTest3()"></a>
 <h3 class="failures">Input with multiple words in name</h3>
 <span class="code">
-<pre>org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;com.assignment1.item.Item@4a35ca37&gt; but was: &lt;com.assignment1.item.Item@293e6ff1&gt;
+<pre>org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest3(ParserTest.java:44)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
+	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest3(ParserTest.java:43)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -525,12 +521,11 @@
 <a name="parseTest4()"></a>
 <h3 class="failures">Input with no explicit price option</h3>
 <span class="code">
-<pre>org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;com.assignment1.item.Item@31471df4&gt; but was: &lt;com.assignment1.item.Item@6bdcbdca&gt;
+<pre>org.opentest4j.AssertionFailedError: Should parse correctly ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest4(ParserTest.java:52)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
+	at com.assignment1.parser.ParserTest$AcceptedTests.parseTest4(ParserTest.java:50)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -649,19 +644,19 @@
 <tr>
 <td class="failures">Input with no explicit quantity option</td>
 <td class="failures">parseTest()</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.024s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simple input test</td>
 <td class="failures">parseTest1()</td>
-<td class="failures">0.003s</td>
+<td class="failures">0.004s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Input with 2 words in name</td>
 <td class="failures">parseTest2()</td>
-<td class="failures">0.014s</td>
+<td class="failures">0.001s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -686,7 +681,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.8</a> at May 20, 2021, 2:02:34 AM</p>
+<a href="http://www.gradle.org">Gradle 6.8</a> at May 20, 2021, 9:04:40 AM</p>
 </div>
 </div>
 </body>

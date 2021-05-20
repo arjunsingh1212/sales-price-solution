@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Item.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SalesPrice</a> &gt; <a href="index.source.html" class="el_package">com.assignment1.item</a> &gt; <span class="el_source">Item.java</span></div><h1>Item.java</h1><pre class="source lang-java linenums">package com.assignment1.item;
+
+public class Item {
+  private String name, type;
+  private int quantity;
+  private double price;
+  private double tax;
+
+<span class="fc" id="L9">  public Item() {</span>
+<span class="fc" id="L10">    name = &quot;&quot;;</span>
+<span class="fc" id="L11">    type = &quot;&quot;;</span>
+<span class="fc" id="L12">    quantity = 1;</span>
+<span class="fc" id="L13">    price = 0.0;</span>
+<span class="fc" id="L14">    tax = 0.0;</span>
+<span class="fc" id="L15">  }</span>
+
+<span class="nc" id="L17">  public Item(String name, double price, int quantity, String type) {</span>
+<span class="nc" id="L18">    this.name = name;</span>
+<span class="nc" id="L19">    this.price = price;</span>
+<span class="nc" id="L20">    this.quantity = quantity;</span>
+<span class="nc" id="L21">    this.type = type;</span>
+<span class="nc" id="L22">    this.tax = 0;</span>
+<span class="nc" id="L23">  }</span>
+
+  public String getName() {
+<span class="fc" id="L26">    return name;</span>
+  }
+
+  public void setName(String name) {
+<span class="nc" id="L30">    this.name = name;</span>
+<span class="nc" id="L31">  }</span>
+
+  public String getType() {
+<span class="nc" id="L34">    return type;</span>
+  }
+
+  public void setType(String type) {
+<span class="nc" id="L38">    this.type = type;</span>
+<span class="nc" id="L39">  }</span>
+
+  public double getPrice() {
+<span class="fc" id="L42">    return price;</span>
+  }
+
+  public void setPrice(double price) {
+<span class="nc" id="L46">    this.price = price;</span>
+<span class="nc" id="L47">  }</span>
+
+  public int getQuantity() {
+<span class="fc" id="L50">    return quantity;</span>
+  }
+
+  public void setQuantity(int quantity) {
+<span class="nc" id="L54">    this.quantity = quantity;</span>
+<span class="nc" id="L55">  }</span>
+
+  public double getTax() {
+<span class="fc" id="L58">    return tax;</span>
+  }
+
+  public void setTax(double tax) {
+<span class="nc" id="L62">    this.tax = tax;</span>
+<span class="nc" id="L63">  }</span>
+
+  public double calculateTax() {
+<span class="nc bnc" id="L66" title="All 4 branches missed.">    switch (type) {</span>
+      case &quot;raw&quot;:
+<span class="nc" id="L68">        tax = 0.125 * price;</span>
+<span class="nc" id="L69">        break;</span>
+      case &quot;manufactured&quot;:
+<span class="nc" id="L71">        tax = 0.125 * price + 0.02 * (price + 0.125 * price);</span>
+<span class="nc" id="L72">        break;</span>
+      case &quot;imported&quot;:
+<span class="nc" id="L74">        double importDuty = 0.1 * price;</span>
+<span class="nc bnc" id="L75" title="All 2 branches missed.">        if (price + importDuty &lt;= 100) {</span>
+<span class="nc" id="L76">          tax = importDuty + 5;</span>
+<span class="nc bnc" id="L77" title="All 4 branches missed.">        } else if (price + importDuty &gt; 100 &amp;&amp; price + importDuty &lt;= 200) {</span>
+<span class="nc" id="L78">          tax = importDuty + 10;</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">        } else if (price + importDuty &gt; 200) {</span>
+<span class="nc" id="L80">          tax = importDuty + 0.05 * (price + importDuty);</span>
+        }
+        break;
+    }
+<span class="nc" id="L84">    return tax;</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
