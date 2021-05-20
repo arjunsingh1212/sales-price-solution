@@ -7,26 +7,26 @@ import java.util.Scanner;
 
 public class UserInterface implements UserInterfaceHandler {
   @Override
-  public String takeInput() {
+  public String takeInput(Environment env) {
     String str = "";
     Scanner sc = new Scanner(System.in);
     System.out.print("Enter Name: ");
-    String name = sc.nextLine();
+    String name = env == Environment.TEST ? "DummyName" : sc.nextLine();  //Taking input as Dummy if Test env or from CLI if Production env
     if (!name.equals("")) { //avoid adding option in the string if value blank
       str += "-name " + name;
     }
     System.out.print("Enter Price: ");
-    String price = sc.nextLine();
+    String price = env == Environment.TEST ? "100" :sc.nextLine();  //Dummy value 100 for Testing
     if (!price.equals("")) {
       str += " -price " + price;
     }
     System.out.print("Enter Quantity: ");
-    String quantity = sc.nextLine();
+    String quantity = env == Environment.TEST ? "100" :sc.nextLine();
     if (!quantity.equals("")) {
       str += " -quantity " + quantity;
     }
     System.out.print("Enter Type: ");
-    String type = sc.nextLine();
+    String type = env == Environment.TEST ? "raw" :sc.nextLine();
     if (!type.equals("")) {
       str += " -type " + type;
     }

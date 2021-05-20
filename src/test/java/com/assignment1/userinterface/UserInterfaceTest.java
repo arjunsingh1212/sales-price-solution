@@ -1,5 +1,6 @@
 package com.assignment1.userinterface;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.assignment1.item.Item;
@@ -15,6 +16,13 @@ public class UserInterfaceTest {
   @BeforeEach
   void createObj() {
     userInterfaceObj = new UserInterface();
+  }
+
+  @Test
+  @DisplayName("Test the Input taking scenario using Environment enum")
+  void takeInputTest() {
+    Environment env = Environment.TEST;
+    assertEquals("-name DummyName -price 100 -quantity 100 -type raw",userInterfaceObj.takeInput(env));
   }
 
   @Test

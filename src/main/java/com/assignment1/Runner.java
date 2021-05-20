@@ -7,6 +7,7 @@ import com.assignment1.parser.CommandLineParser;
 import com.assignment1.parser.Parsable;
 import com.assignment1.parser.Valid;
 import com.assignment1.parser.Validity;
+import com.assignment1.userinterface.Environment;
 import com.assignment1.userinterface.UserInterface;
 import com.assignment1.userinterface.UserInterfaceHandler;
 import java.util.ArrayList;
@@ -35,13 +36,15 @@ public class Runner {
       uiObj.showUsageMessage(); //Show message to customer how to use the application and format to give input in CLI
     }
 
+    Environment env = Environment.PROD; //Declaring Environment to be Production for taking inputs from user on CLI
+
     while (true) {  //Loop to prompt user to give input until he preses n for No More Input
       System.out.print("\nDo you want to enter details of any other item (y/n): ");
       Scanner sc = new Scanner(System.in);
       char inputYesNo = sc.next().charAt(0); //Input a character response from user
       switch (inputYesNo) {
         case 'y':
-          cliInput = uiObj.takeInput(); //Takes input from user by prompting to enter values
+          cliInput = uiObj.takeInput(env); //Takes input from user by prompting to enter values
           try {  //Same logic as explained before while loop
             Item item = parserObj.parse(cliInput);
             double taxOutput = taxObj.calculateTax(item);
