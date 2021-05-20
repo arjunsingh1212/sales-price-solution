@@ -2,44 +2,62 @@
 
 import com.assignment1.item.Item;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-<span class="nc" id="L7">public class UserInterface implements UserInterfaceHandler {</span>
+<span class="fc" id="L8">public class UserInterface implements UserInterfaceHandler {</span>
   @Override
   public String takeInput() {
-<span class="nc" id="L10">    String str = &quot;&quot;;</span>
-<span class="nc" id="L11">    Scanner sc = new Scanner(System.in);</span>
-<span class="nc" id="L12">    System.out.print(&quot;Enter Name: &quot;);</span>
-<span class="nc" id="L13">    String name = sc.nextLine();</span>
-<span class="nc bnc" id="L14" title="All 2 branches missed.">    if (!name.equals(&quot;&quot;)) str += &quot;-name &quot; + name;</span>
-<span class="nc" id="L15">    System.out.print(&quot;Enter Price: &quot;);</span>
-<span class="nc" id="L16">    String price = sc.nextLine();</span>
-<span class="nc bnc" id="L17" title="All 2 branches missed.">    if (!price.equals(&quot;&quot;)) str += &quot;-price &quot; + price;</span>
-<span class="nc" id="L18">    System.out.print(&quot;Enter Quantity: &quot;);</span>
-<span class="nc" id="L19">    String quantity = sc.nextLine();</span>
-<span class="nc bnc" id="L20" title="All 2 branches missed.">    if (!quantity.equals(&quot;&quot;)) str += &quot;-quantity &quot; + quantity;</span>
-<span class="nc" id="L21">    String type = sc.nextLine();</span>
-<span class="nc bnc" id="L22" title="All 2 branches missed.">    if (!type.equals(&quot;&quot;)) str += &quot;-type &quot; + type;</span>
+<span class="nc" id="L11">    String str = &quot;&quot;;</span>
+<span class="nc" id="L12">    Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L13">    System.out.print(&quot;Enter Name: &quot;);</span>
+<span class="nc" id="L14">    String name = sc.nextLine();</span>
+<span class="nc bnc" id="L15" title="All 2 branches missed.">    if (!name.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L16">      str += &quot;-name &quot; + name;</span>
+    }
+<span class="nc" id="L18">    System.out.print(&quot;Enter Price: &quot;);</span>
+<span class="nc" id="L19">    String price = sc.nextLine();</span>
+<span class="nc bnc" id="L20" title="All 2 branches missed.">    if (!price.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L21">      str += &quot; -price &quot; + price;</span>
+    }
+<span class="nc" id="L23">    System.out.print(&quot;Enter Quantity: &quot;);</span>
+<span class="nc" id="L24">    String quantity = sc.nextLine();</span>
+<span class="nc bnc" id="L25" title="All 2 branches missed.">    if (!quantity.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L26">      str += &quot; -quantity &quot; + quantity;</span>
+    }
+<span class="nc" id="L28">    System.out.print(&quot;Enter Type: &quot;);</span>
+<span class="nc" id="L29">    String type = sc.nextLine();</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">    if (!type.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L31">      str += &quot; -type &quot; + type;</span>
+    }
 
-<span class="nc" id="L24">    return str;</span>
+<span class="nc" id="L34">    return str;</span>
   }
 
   @Override
   public boolean showUsageMessage() {
-<span class="nc" id="L29">    System.out.println(&quot;-name &lt;first item name&gt;\n&quot; +</span>
+<span class="fc" id="L39">    System.out.println(&quot;\n\nEntered format is not correct.\n\n&quot; +</span>
+            &quot;Showing Usage:\n\nThe correct options and values are as follows &quot; +
+            &quot;and type option can be any of the three values from [raw, manufactured, imported].&quot; +
+            &quot;And also, name and type are mandatory options&quot;);
+<span class="fc" id="L43">    System.out.println(&quot;-name &lt;first item name&gt;\n&quot; +</span>
             &quot;-price &lt;price of first item&gt;\n&quot; +
             &quot;-quantity &lt;quantity of first item&gt;\n&quot; +
-            &quot;-type &lt;type of first item&gt;&quot;);
-<span class="nc" id="L33">    return true;</span>
+            &quot;-type &lt;type of first item&gt;\n&quot;);
+<span class="fc" id="L47">    return true;</span>
   }
 
   @Override
-  public boolean giveOutput(Item[] itemArr) {
-<span class="nc" id="L38">    System.out.println(&quot;item name\t item prize\t sales tax liability per item\t final prize (sales tax + item prize)&quot;);</span>
-<span class="nc bnc" id="L39" title="All 2 branches missed.">    for (Item item : itemArr) {</span>
-<span class="nc" id="L40">      System.out.println(item.getName() + &quot;\t&quot; + item.getPrice() + &quot;\t&quot; + item.getTax() + &quot;\t&quot; + item.getQuantity() * (item.getPrice() + item.getTax()));</span>
-    }
-<span class="nc" id="L42">    return true;</span>
+  public boolean giveOutput(ArrayList&lt;Item&gt; itemArr) {
+<span class="fc" id="L52">    System.out.println(&quot;ItemName, ItemPrice, SalesTax, ItemQuantity, FinalPrice&quot;);</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">    for (Item item : itemArr) {</span>
+<span class="fc" id="L54">      System.out.println(item.getName() +</span>
+<span class="fc" id="L55">              &quot;, &quot; + item.getPrice() +</span>
+<span class="fc" id="L56">              &quot;, &quot; + item.getTax() +</span>
+<span class="fc" id="L57">              &quot;, &quot; + item.getQuantity() +</span>
+<span class="fc" id="L58">              &quot;, &quot; + item.getQuantity() * (item.getPrice() + item.getTax()));</span>
+<span class="fc" id="L59">    }</span>
+<span class="fc" id="L60">    return true;</span>
   }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

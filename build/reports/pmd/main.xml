@@ -1,57 +1,804 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.26.0" timestamp="2021-05-19T03:10:26.837">
-<file name="C:\Users\Arjun Singh\IdeaProjects\SalesPrice\src\main\java\com\items\salesprice\CommandLineInput.java">
-<violation beginline="3" endline="14" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.items.salesprice" class="CommandLineInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.26.0" timestamp="2021-05-20T18:45:26.759">
+<file name="C:\Users\Arjun Singh\IdeaProjects\SalesPrice\src\main\java\com\assignment1\Runner.java">
+<violation beginline="13" endline="59" begincolumn="21" endcolumn="1" rule="UseUtilityClass" ruleset="Design" package="com.assignment1" class="Runner" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#useutilityclass" priority="3">
+All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+</violation>
+<violation beginline="13" endline="59" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.assignment1" class="Runner" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
 Class comments are required
 </violation>
-<violation beginline="3" endline="14" begincolumn="8" endcolumn="1" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.items.salesprice" class="CommandLineInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
-Each class should declare at least one constructor
+<violation beginline="14" endline="14" begincolumn="49" endcolumn="64" rule="AvoidUncheckedExceptionsInSignatures" ruleset="Design" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#avoiduncheckedexceptionsinsignatures" priority="3">
+A method or constructor should not explicitly declare unchecked exceptions in its 'throws' clause
 </violation>
-<violation beginline="5" endline="5" begincolumn="25" endcolumn="34" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.items.salesprice" class="CommandLineInput" method="parse" variable="str" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
-Parameter 'str' is not assigned and could be declared final
+<violation beginline="14" endline="14" begincolumn="27" endcolumn="39" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1" class="Runner" method="main" variable="args" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'args' is not assigned and could be declared final
 </violation>
-<violation beginline="5" endline="8" begincolumn="10" endcolumn="3" rule="CommentRequired" ruleset="Documentation" package="com.items.salesprice" class="CommandLineInput" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+<violation beginline="14" endline="58" begincolumn="17" endcolumn="3" rule="CommentRequired" ruleset="Documentation" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
 Public method and constructor comments are required
 </violation>
-<violation beginline="5" endline="8" begincolumn="10" endcolumn="3" rule="MissingOverride" ruleset="Best Practices" package="com.items.salesprice" class="CommandLineInput" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#missingoverride" priority="3">
-The method 'parse(String)' is missing an @Override annotation.
+<violation beginline="16" endline="16" begincolumn="10" endcolumn="19" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1" class="Runner" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'arg' could be declared final
 </violation>
-<violation beginline="6" endline="6" begincolumn="5" endcolumn="34" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.items.salesprice" class="CommandLineInput" method="parse" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'dummy' could be declared final
+<violation beginline="17" endline="17" begincolumn="16" endcolumn="17" rule="UseStringBufferForStringAppends" ruleset="Performance" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_performance.html#usestringbufferforstringappends" priority="3">
+Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
 </violation>
-<violation beginline="7" endline="7" begincolumn="5" endcolumn="17" rule="UnnecessaryLocalBeforeReturn" ruleset="Code Style" package="com.items.salesprice" class="CommandLineInput" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#unnecessarylocalbeforereturn" priority="3">
-Consider simply returning the value vs storing it in local variable 'dummy'
+<violation beginline="19" endline="19" begincolumn="33" endcolumn="53" rule="UseDiamondOperator" ruleset="Code Style" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#usediamondoperator" priority="3">
+Explicit type arguments can be replaced by Diamond Operator
 </violation>
-<violation beginline="10" endline="10" begincolumn="27" endcolumn="43" rule="UseVarargs" ruleset="Best Practices" package="com.items.salesprice" class="CommandLineInput" method="validate" variable="strArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#usevarargs" priority="4">
-Consider using varargs for methods or constructors which take an array the last parameter.
+<violation beginline="19" endline="19" begincolumn="5" endcolumn="53" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1" class="Runner" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'itemArray' could be declared final
 </violation>
-<violation beginline="10" endline="10" begincolumn="27" endcolumn="43" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.items.salesprice" class="CommandLineInput" method="validate" variable="strArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
-Parameter 'strArray' is not assigned and could be declared final
+<violation beginline="20" endline="20" begincolumn="5" endcolumn="35" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1" class="Runner" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'validObj' could be declared final
 </violation>
-<violation beginline="10" endline="13" begincolumn="10" endcolumn="3" rule="CommentRequired" ruleset="Documentation" package="com.items.salesprice" class="CommandLineInput" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
-Public method and constructor comments are required
+<violation beginline="21" endline="21" begincolumn="5" endcolumn="56" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1" class="Runner" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'parserObj' could be declared final
 </violation>
-<violation beginline="10" endline="13" begincolumn="10" endcolumn="3" rule="MissingOverride" ruleset="Best Practices" package="com.items.salesprice" class="CommandLineInput" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#missingoverride" priority="3">
-The method 'validate(String)' is missing an @Override annotation.
+<violation beginline="22" endline="22" begincolumn="5" endcolumn="52" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1" class="Runner" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'uiObj' could be declared final
 </violation>
-<violation beginline="11" endline="11" begincolumn="5" endcolumn="25" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.items.salesprice" class="CommandLineInput" method="validate" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'dummy' could be declared final
+<violation beginline="25" endline="25" begincolumn="7" endcolumn="43" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1" class="Runner" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'item' could be declared final
 </violation>
-<violation beginline="12" endline="12" begincolumn="5" endcolumn="17" rule="UnnecessaryLocalBeforeReturn" ruleset="Code Style" package="com.items.salesprice" class="CommandLineInput" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#unnecessarylocalbeforereturn" priority="3">
-Consider simply returning the value vs storing it in local variable 'dummy'
+<violation beginline="26" endline="26" begincolumn="7" endcolumn="44" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1" class="Runner" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'taxOutput' could be declared final
+</violation>
+<violation beginline="26" endline="26" begincolumn="26" endcolumn="44" rule="LawOfDemeter" ruleset="Design" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
+Potential violation of Law of Demeter (object not created locally)
+</violation>
+<violation beginline="27" endline="27" begincolumn="7" endcolumn="28" rule="LawOfDemeter" ruleset="Design" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
+Potential violation of Law of Demeter (object not created locally)
+</violation>
+<violation beginline="29" endline="29" begincolumn="14" endcolumn="29" rule="AvoidCatchingGenericException" ruleset="Design" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
+Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+</violation>
+<violation beginline="34" endline="34" begincolumn="7" endcolumn="22" rule="SystemPrintln" ruleset="Best Practices" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.print is used
+</violation>
+<violation beginline="35" endline="35" begincolumn="20" endcolumn="41" rule="AvoidInstantiatingObjectsInLoops" ruleset="Performance" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_performance.html#avoidinstantiatingobjectsinloops" priority="3">
+Avoid instantiating new objects inside loops
+</violation>
+<violation beginline="35" endline="35" begincolumn="15" endcolumn="16" rule="ShortVariable" ruleset="Code Style" package="com.assignment1" class="Runner" method="main" variable="sc" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like sc
+</violation>
+<violation beginline="35" endline="35" begincolumn="15" endcolumn="16" rule="CloseResource" ruleset="Error Prone" package="com.assignment1" class="Runner" method="main" variable="sc" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
+Ensure that resources like this Scanner object are closed after use
+</violation>
+<violation beginline="35" endline="35" begincolumn="15" endcolumn="16" rule="CloseResource" ruleset="Error Prone" package="com.assignment1" class="Runner" method="main" variable="sc" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
+Ensure that resources like this Scanner object are closed after use
+</violation>
+<violation beginline="35" endline="35" begincolumn="7" endcolumn="41" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1" class="Runner" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'sc' could be declared final
+</violation>
+<violation beginline="36" endline="36" begincolumn="7" endcolumn="43" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1" class="Runner" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'inputYesNo' could be declared final
+</violation>
+<violation beginline="36" endline="36" begincolumn="25" endcolumn="43" rule="LawOfDemeter" ruleset="Design" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
+Potential violation of Law of Demeter (method chain calls)
+</violation>
+<violation beginline="37" endline="56" begincolumn="7" endcolumn="7" rule="MissingBreakInSwitch" ruleset="Error Prone" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#missingbreakinswitch" priority="3">
+A switch statement does not contain a break
+</violation>
+<violation beginline="37" endline="56" begincolumn="7" endcolumn="7" rule="MissingBreakInSwitch" ruleset="Error Prone" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#missingbreakinswitch" priority="3">
+A switch statement does not contain a break
+</violation>
+<violation beginline="41" endline="41" begincolumn="13" endcolumn="49" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1" class="Runner" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'item' could be declared final
+</violation>
+<violation beginline="42" endline="42" begincolumn="13" endcolumn="50" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1" class="Runner" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'taxOutput' could be declared final
+</violation>
+<violation beginline="42" endline="42" begincolumn="32" endcolumn="50" rule="LawOfDemeter" ruleset="Design" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
+Potential violation of Law of Demeter (object not created locally)
+</violation>
+<violation beginline="43" endline="43" begincolumn="13" endcolumn="34" rule="LawOfDemeter" ruleset="Design" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
+Potential violation of Law of Demeter (object not created locally)
+</violation>
+<violation beginline="45" endline="45" begincolumn="20" endcolumn="28" rule="AvoidCatchingGenericException" ruleset="Design" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
+Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+</violation>
+<violation beginline="50" endline="50" begincolumn="11" endcolumn="28" rule="SystemPrintln" ruleset="Best Practices" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="52" endline="52" begincolumn="11" endcolumn="21" rule="DoNotCallSystemExit" ruleset="Error Prone" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#donotcallsystemexit" priority="3">
+System.exit() should not be used in J2EE/JEE apps
+</violation>
+<violation beginline="52" endline="52" begincolumn="11" endcolumn="21" rule="DoNotCallSystemExit" ruleset="Error Prone" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#donotcallsystemexit" priority="3">
+System.exit() should not be used in J2EE/JEE apps
+</violation>
+<violation beginline="55" endline="55" begincolumn="11" endcolumn="28" rule="SystemPrintln" ruleset="Best Practices" package="com.assignment1" class="Runner" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
 </violation>
 </file>
-<file name="C:\Users\Arjun Singh\IdeaProjects\SalesPrice\src\main\java\com\items\salesprice\ParserValidator.java">
-<violation beginline="3" endline="6" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.items.salesprice" class="ParserValidator" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+<file name="C:\Users\Arjun Singh\IdeaProjects\SalesPrice\src\main\java\com\assignment1\item\Item.java">
+<violation beginline="3" endline="95" begincolumn="8" endcolumn="1" rule="ShortClassName" ruleset="Code Style" package="com.assignment1.item" class="Item" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#shortclassname" priority="4">
+Avoid short class names like Item
+</violation>
+<violation beginline="3" endline="95" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.item" class="Item" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
 Class comments are required
 </violation>
-<violation beginline="4" endline="4" begincolumn="3" endcolumn="29" rule="CommentRequired" ruleset="Documentation" package="com.items.salesprice" class="ParserValidator" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+<violation beginline="3" endline="95" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.assignment1.item" class="Item" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'Item' is suspected to be a Data Class (WOC=14.286%, NOPA=0, NOAM=10, WMC=21)
+</violation>
+<violation beginline="4" endline="4" begincolumn="11" endcolumn="22" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.item" class="Item" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Field comments are required
+</violation>
+<violation beginline="5" endline="5" begincolumn="11" endcolumn="22" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.item" class="Item" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Field comments are required
+</violation>
+<violation beginline="6" endline="6" begincolumn="11" endcolumn="23" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.item" class="Item" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Field comments are required
+</violation>
+<violation beginline="7" endline="7" begincolumn="11" endcolumn="23" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.item" class="Item" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Field comments are required
+</violation>
+<violation beginline="8" endline="8" begincolumn="11" endcolumn="21" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.item" class="Item" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Field comments are required
+</violation>
+<violation beginline="10" endline="16" begincolumn="10" endcolumn="3" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.item" class="Item" method="Item" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
 Public method and constructor comments are required
 </violation>
-<violation beginline="5" endline="5" begincolumn="20" endcolumn="36" rule="UseVarargs" ruleset="Best Practices" package="com.items.salesprice" class="ParserValidator" method="validate" variable="strArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#usevarargs" priority="4">
+<violation beginline="18" endline="18" begincolumn="15" endcolumn="25" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.item" class="Item" method="Item" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'name' is not assigned and could be declared final
+</violation>
+<violation beginline="18" endline="18" begincolumn="28" endcolumn="39" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.item" class="Item" method="Item" variable="price" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'price' is not assigned and could be declared final
+</violation>
+<violation beginline="18" endline="18" begincolumn="42" endcolumn="53" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.item" class="Item" method="Item" variable="quantity" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'quantity' is not assigned and could be declared final
+</violation>
+<violation beginline="18" endline="18" begincolumn="56" endcolumn="66" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.item" class="Item" method="Item" variable="type" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'type' is not assigned and could be declared final
+</violation>
+<violation beginline="18" endline="24" begincolumn="10" endcolumn="3" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.item" class="Item" method="Item" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="31" endline="31" begincolumn="23" endcolumn="33" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.item" class="Item" method="setName" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'name' is not assigned and could be declared final
+</violation>
+<violation beginline="39" endline="39" begincolumn="23" endcolumn="33" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.item" class="Item" method="setType" variable="type" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'type' is not assigned and could be declared final
+</violation>
+<violation beginline="47" endline="47" begincolumn="24" endcolumn="35" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.item" class="Item" method="setPrice" variable="price" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'price' is not assigned and could be declared final
+</violation>
+<violation beginline="55" endline="55" begincolumn="27" endcolumn="38" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.item" class="Item" method="setQuantity" variable="quantity" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'quantity' is not assigned and could be declared final
+</violation>
+<violation beginline="63" endline="63" begincolumn="22" endcolumn="31" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.item" class="Item" method="setTax" variable="tax" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'tax' is not assigned and could be declared final
+</violation>
+<violation beginline="67" endline="69" begincolumn="10" endcolumn="3" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.item" class="Item" method="toString" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="67" endline="69" begincolumn="10" endcolumn="3" rule="MissingOverride" ruleset="Best Practices" package="com.assignment1.item" class="Item" method="toString" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#missingoverride" priority="3">
+The method 'toString()' is missing an @Override annotation.
+</violation>
+<violation beginline="68" endline="68" begincolumn="19" endcolumn="32" rule="UselessStringValueOf" ruleset="Performance" package="com.assignment1.item" class="Item" method="toString" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_performance.html#uselessstringvalueof" priority="3">
+No need to call String.valueOf to append to a string.
+</violation>
+<violation beginline="68" endline="68" begincolumn="43" endcolumn="56" rule="UselessStringValueOf" ruleset="Performance" package="com.assignment1.item" class="Item" method="toString" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_performance.html#uselessstringvalueof" priority="3">
+No need to call String.valueOf to append to a string.
+</violation>
+<violation beginline="71" endline="94" begincolumn="10" endcolumn="3" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.item" class="Item" method="calculateTax" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="80" endline="80" begincolumn="9" endcolumn="39" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1.item" class="Item" method="calculateTax" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'importDuty' could be declared final
+</violation>
+<violation beginline="81" endline="81" begincolumn="9" endcolumn="45" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1.item" class="Item" method="calculateTax" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'finalCost' could be declared final
+</violation>
+<violation beginline="82" endline="82" begincolumn="26" endcolumn="28" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.assignment1.item" class="Item" method="calculateTax" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+<violation beginline="82" endline="82" begincolumn="26" endcolumn="28" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.assignment1.item" class="Item" method="calculateTax" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+<violation beginline="86" endline="86" begincolumn="32" endcolumn="34" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.assignment1.item" class="Item" method="calculateTax" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+<violation beginline="86" endline="86" begincolumn="32" endcolumn="34" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.assignment1.item" class="Item" method="calculateTax" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+</file>
+<file name="C:\Users\Arjun Singh\IdeaProjects\SalesPrice\src\main\java\com\assignment1\parser\CommandLineParser.java">
+<violation beginline="5" endline="62" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.parser" class="CommandLineParser" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="6" endline="6" begincolumn="17" endcolumn="31" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.parser" class="CommandLineParser" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Field comments are required
+</violation>
+<violation beginline="6" endline="6" begincolumn="23" endcolumn="30" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" variable="validObj" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="6" endline="6" begincolumn="23" endcolumn="30" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" variable="validObj" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="8" endline="10" begincolumn="10" endcolumn="3" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.parser" class="CommandLineParser" method="CommandLineParser" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="12" endline="12" begincolumn="28" endcolumn="41" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.parser" class="CommandLineParser" method="CommandLineParser" variable="validObj" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'validObj' is not assigned and could be declared final
+</violation>
+<violation beginline="12" endline="14" begincolumn="10" endcolumn="3" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.parser" class="CommandLineParser" method="CommandLineParser" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="17" endline="17" begincolumn="42" endcolumn="57" rule="AvoidUncheckedExceptionsInSignatures" ruleset="Design" package="com.assignment1.parser" class="CommandLineParser" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#avoiduncheckedexceptionsinsignatures" priority="3">
+A method or constructor should not explicitly declare unchecked exceptions in its 'throws' clause
+</violation>
+<violation beginline="17" endline="17" begincolumn="21" endcolumn="32" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="input" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'input' is not assigned and could be declared final
+</violation>
+<violation beginline="18" endline="61" begincolumn="10" endcolumn="26" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="item" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'item' (lines '18'-'61').
+</violation>
+<violation beginline="18" endline="61" begincolumn="10" endcolumn="26" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="item" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'item' (lines '18'-'61').
+</violation>
+<violation beginline="18" endline="18" begincolumn="5" endcolumn="26" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'item' could be declared final
+</violation>
+<violation beginline="19" endline="19" begincolumn="5" endcolumn="39" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'args' could be declared final
+</violation>
+<violation beginline="20" endline="20" begincolumn="5" endcolumn="45" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'isValid' could be declared final
+</violation>
+<violation beginline="23" endline="42" begincolumn="11" endcolumn="54" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="priceValue" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'priceValue' (lines '23'-'42').
+</violation>
+<violation beginline="23" endline="42" begincolumn="11" endcolumn="54" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="priceValue" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'priceValue' (lines '23'-'42').
+</violation>
+<violation beginline="24" endline="45" begincolumn="11" endcolumn="55" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="quantityValue" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'quantityValue' (lines '24'-'45').
+</violation>
+<violation beginline="24" endline="45" begincolumn="11" endcolumn="55" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="quantityValue" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'quantityValue' (lines '24'-'45').
+</violation>
+<violation beginline="25" endline="48" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="typeValue" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'typeValue' (lines '25'-'48').
+</violation>
+<violation beginline="25" endline="48" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="typeValue" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'typeValue' (lines '25'-'48').
+</violation>
+<violation beginline="26" endline="35" begincolumn="11" endcolumn="28" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="nameEndPointer" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'nameEndPointer' (lines '26'-'35').
+</violation>
+<violation beginline="26" endline="35" begincolumn="11" endcolumn="28" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="nameEndPointer" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'nameEndPointer' (lines '26'-'35').
+</violation>
+<violation beginline="28" endline="37" begincolumn="9" endcolumn="9" rule="ConfusingTernary" ruleset="Code Style" package="com.assignment1.parser" class="CommandLineParser" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#confusingternary" priority="3">
+Avoid if (x != y) ..; else ..;
+</violation>
+<violation beginline="28" endline="28" begincolumn="34" endcolumn="36" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+<violation beginline="28" endline="28" begincolumn="34" endcolumn="36" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+<violation beginline="29" endline="33" begincolumn="11" endcolumn="11" rule="ConfusingTernary" ruleset="Code Style" package="com.assignment1.parser" class="CommandLineParser" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#confusingternary" priority="3">
+Avoid if (x != y) ..; else ..;
+</violation>
+<violation beginline="29" endline="29" begincolumn="40" endcolumn="42" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+<violation beginline="29" endline="29" begincolumn="40" endcolumn="42" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+<violation beginline="30" endline="30" begincolumn="23" endcolumn="24" rule="UseStringBufferForStringAppends" ruleset="Performance" package="com.assignment1.parser" class="CommandLineParser" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_performance.html#usestringbufferforstringappends" priority="3">
+Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+</violation>
+<violation beginline="32" endline="32" begincolumn="23" endcolumn="24" rule="UseStringBufferForStringAppends" ruleset="Performance" package="com.assignment1.parser" class="CommandLineParser" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_performance.html#usestringbufferforstringappends" priority="3">
+Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+</violation>
+<violation beginline="41" endline="41" begincolumn="13" endcolumn="36" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="com.assignment1.parser" class="CommandLineParser" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="42" endline="42" begincolumn="11" endcolumn="54" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="priceValue" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'priceValue' (lines '42'-'42').
+</violation>
+<violation beginline="42" endline="42" begincolumn="11" endcolumn="54" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="priceValue" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'priceValue' (lines '42'-'42').
+</violation>
+<violation beginline="44" endline="44" begincolumn="13" endcolumn="39" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="com.assignment1.parser" class="CommandLineParser" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="45" endline="45" begincolumn="11" endcolumn="55" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="quantityValue" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'quantityValue' (lines '45'-'45').
+</violation>
+<violation beginline="45" endline="45" begincolumn="11" endcolumn="55" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="quantityValue" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'quantityValue' (lines '45'-'45').
+</violation>
+<violation beginline="47" endline="47" begincolumn="13" endcolumn="35" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="com.assignment1.parser" class="CommandLineParser" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="48" endline="48" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="typeValue" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'typeValue' (lines '48'-'48').
+</violation>
+<violation beginline="48" endline="48" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="CommandLineParser" method="parse" variable="typeValue" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'typeValue' (lines '48'-'48').
+</violation>
+<violation beginline="57" endline="57" begincolumn="7" endcolumn="18" rule="OnlyOneReturn" ruleset="Code Style" package="com.assignment1.parser" class="CommandLineParser" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+</file>
+<file name="C:\Users\Arjun Singh\IdeaProjects\SalesPrice\src\main\java\com\assignment1\parser\Parsable.java">
+<violation beginline="5" endline="7" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.parser" class="Parsable" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="6" endline="6" begincolumn="3" endcolumn="27" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.parser" class="Parsable" method="parse" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+</file>
+<file name="C:\Users\Arjun Singh\IdeaProjects\SalesPrice\src\main\java\com\assignment1\parser\Valid.java">
+<violation beginline="3" endline="5" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.parser" class="Valid" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="4" endline="4" begincolumn="20" endcolumn="32" rule="UseVarargs" ruleset="Best Practices" package="com.assignment1.parser" class="Valid" method="validate" variable="args" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#usevarargs" priority="4">
 Consider using varargs for methods or constructors which take an array the last parameter.
 </violation>
-<violation beginline="5" endline="5" begincolumn="3" endcolumn="38" rule="CommentRequired" ruleset="Documentation" package="com.items.salesprice" class="ParserValidator" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+<violation beginline="4" endline="4" begincolumn="3" endcolumn="34" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.parser" class="Valid" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+</file>
+<file name="C:\Users\Arjun Singh\IdeaProjects\SalesPrice\src\main\java\com\assignment1\parser\Validity.java">
+<violation beginline="3" endline="89" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.parser" class="Validity" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="3" endline="89" begincolumn="8" endcolumn="1" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.assignment1.parser" class="Validity" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="5" endline="5" begincolumn="28" endcolumn="37" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="checkFormatPrice" variable="str" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'str' is not assigned and could be declared final
+</violation>
+<violation beginline="5" endline="7" begincolumn="3" endcolumn="3" rule="CommentDefaultAccessModifier" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="checkFormatPrice" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#commentdefaultaccessmodifier" priority="3">
+To avoid mistakes add a comment at the beginning of the checkFormatPrice method if you want a default access modifier
+</violation>
+<violation beginline="5" endline="7" begincolumn="3" endcolumn="3" rule="DefaultPackage" ruleset="Code Style" package="com.assignment1.parser" class="Validity" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#defaultpackage" priority="3">
+Use explicit scoping instead of the default package private level
+</violation>
+<violation beginline="9" endline="9" begincolumn="31" endcolumn="40" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="checkFormatQuantity" variable="str" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'str' is not assigned and could be declared final
+</violation>
+<violation beginline="9" endline="11" begincolumn="3" endcolumn="3" rule="CommentDefaultAccessModifier" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="checkFormatQuantity" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#commentdefaultaccessmodifier" priority="3">
+To avoid mistakes add a comment at the beginning of the checkFormatQuantity method if you want a default access modifier
+</violation>
+<violation beginline="9" endline="11" begincolumn="3" endcolumn="3" rule="DefaultPackage" ruleset="Code Style" package="com.assignment1.parser" class="Validity" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#defaultpackage" priority="3">
+Use explicit scoping instead of the default package private level
+</violation>
+<violation beginline="13" endline="13" begincolumn="27" endcolumn="36" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="checkFormatType" variable="str" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'str' is not assigned and could be declared final
+</violation>
+<violation beginline="13" endline="15" begincolumn="3" endcolumn="3" rule="CommentDefaultAccessModifier" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="checkFormatType" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#commentdefaultaccessmodifier" priority="3">
+To avoid mistakes add a comment at the beginning of the checkFormatType method if you want a default access modifier
+</violation>
+<violation beginline="13" endline="15" begincolumn="3" endcolumn="3" rule="DefaultPackage" ruleset="Code Style" package="com.assignment1.parser" class="Validity" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#defaultpackage" priority="3">
+Use explicit scoping instead of the default package private level
+</violation>
+<violation beginline="14" endline="14" begincolumn="12" endcolumn="37" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="com.assignment1.parser" class="Validity" method="checkFormatType" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="14" endline="14" begincolumn="42" endcolumn="58" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="com.assignment1.parser" class="Validity" method="checkFormatType" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="14" endline="14" begincolumn="63" endcolumn="84" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="com.assignment1.parser" class="Validity" method="checkFormatType" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="17" endline="17" begincolumn="27" endcolumn="36" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="checkFormatName" variable="str" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'str' is not assigned and could be declared final
+</violation>
+<violation beginline="17" endline="19" begincolumn="3" endcolumn="3" rule="CommentDefaultAccessModifier" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="checkFormatName" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#commentdefaultaccessmodifier" priority="3">
+To avoid mistakes add a comment at the beginning of the checkFormatName method if you want a default access modifier
+</violation>
+<violation beginline="17" endline="19" begincolumn="3" endcolumn="3" rule="DefaultPackage" ruleset="Code Style" package="com.assignment1.parser" class="Validity" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#defaultpackage" priority="3">
+Use explicit scoping instead of the default package private level
+</violation>
+<violation beginline="22" endline="22" begincolumn="27" endcolumn="39" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="validate" variable="args" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'args' is not assigned and could be declared final
+</violation>
+<violation beginline="22" endline="88" begincolumn="10" endcolumn="3" rule="CyclomaticComplexity" ruleset="Design" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'validate(String)' has a cyclomatic complexity of 28.
+</violation>
+<violation beginline="22" endline="88" begincolumn="10" endcolumn="3" rule="NPathComplexity" ruleset="Design" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#npathcomplexity" priority="3">
+The method 'validate(String)' has an NPath complexity of 4536, current threshold is 200
+</violation>
+<violation beginline="23" endline="23" begincolumn="5" endcolumn="25" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="validate" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'len' could be declared final
+</violation>
+<violation beginline="24" endline="33" begincolumn="7" endcolumn="25" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '24'-'33').
+</violation>
+<violation beginline="24" endline="33" begincolumn="7" endcolumn="25" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '24'-'33').
+</violation>
+<violation beginline="24" endline="88" begincolumn="15" endcolumn="42" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'markArray' (lines '24'-'88').
+</violation>
+<violation beginline="24" endline="88" begincolumn="15" endcolumn="42" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'markArray' (lines '24'-'88').
+</violation>
+<violation beginline="25" endline="41" begincolumn="9" endcolumn="26" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="namePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'namePresent' (lines '25'-'41').
+</violation>
+<violation beginline="25" endline="41" begincolumn="9" endcolumn="26" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="namePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'namePresent' (lines '25'-'41').
+</violation>
+<violation beginline="25" endline="88" begincolumn="13" endcolumn="31" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="namePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'namePresent' (lines '25'-'88').
+</violation>
+<violation beginline="25" endline="88" begincolumn="13" endcolumn="31" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="namePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'namePresent' (lines '25'-'88').
+</violation>
+<violation beginline="26" endline="26" begincolumn="5" endcolumn="31" rule="PrematureDeclaration" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="validate" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#prematuredeclaration" priority="3">
+Avoid declaring a variable if it is unreferenced before a possible exit point.
+</violation>
+<violation beginline="26" endline="88" begincolumn="13" endcolumn="31" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="typePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'typePresent' (lines '26'-'88').
+</violation>
+<violation beginline="26" endline="88" begincolumn="13" endcolumn="31" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="typePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'typePresent' (lines '26'-'88').
+</violation>
+<violation beginline="27" endline="27" begincolumn="5" endcolumn="35" rule="PrematureDeclaration" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="validate" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#prematuredeclaration" priority="3">
+Avoid declaring a variable if it is unreferenced before a possible exit point.
+</violation>
+<violation beginline="27" endline="88" begincolumn="13" endcolumn="35" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="quantityPresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'quantityPresent' (lines '27'-'88').
+</violation>
+<violation beginline="27" endline="88" begincolumn="13" endcolumn="35" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="quantityPresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'quantityPresent' (lines '27'-'88').
+</violation>
+<violation beginline="28" endline="28" begincolumn="5" endcolumn="32" rule="PrematureDeclaration" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="validate" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#prematuredeclaration" priority="3">
+Avoid declaring a variable if it is unreferenced before a possible exit point.
+</violation>
+<violation beginline="28" endline="88" begincolumn="13" endcolumn="32" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="pricePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'pricePresent' (lines '28'-'88').
+</violation>
+<violation beginline="28" endline="88" begincolumn="13" endcolumn="32" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="pricePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'pricePresent' (lines '28'-'88').
+</violation>
+<violation beginline="30" endline="45" begincolumn="5" endcolumn="5" rule="ConfusingTernary" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#confusingternary" priority="3">
+Avoid if (x != y) ..; else ..;
+</violation>
+<violation beginline="30" endline="30" begincolumn="10" endcolumn="32" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="31" endline="31" begincolumn="17" endcolumn="32" rule="AvoidThrowingRawExceptionTypes" ruleset="Design" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#avoidthrowingrawexceptiontypes" priority="1">
+Avoid throwing raw exception types.
+</violation>
+<violation beginline="31" endline="31" begincolumn="34" endcolumn="62" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
+The String literal "Invalid Arguments Exception" appears 7 times in this file; the first occurrence is on line 31
+</violation>
+<violation beginline="31" endline="31" begincolumn="34" endcolumn="62" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
+The String literal "Invalid Arguments Exception" appears 7 times in this file; the first occurrence is on line 31
+</violation>
+<violation beginline="33" endline="40" begincolumn="9" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '33'-'40').
+</violation>
+<violation beginline="33" endline="40" begincolumn="9" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '33'-'40').
+</violation>
+<violation beginline="33" endline="52" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '33'-'52').
+</violation>
+<violation beginline="33" endline="52" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '33'-'52').
+</violation>
+<violation beginline="33" endline="62" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '33'-'62').
+</violation>
+<violation beginline="33" endline="62" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '33'-'62').
+</violation>
+<violation beginline="33" endline="72" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '33'-'72').
+</violation>
+<violation beginline="33" endline="72" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '33'-'72').
+</violation>
+<violation beginline="33" endline="88" begincolumn="7" endcolumn="25" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'markArray' (lines '33'-'88').
+</violation>
+<violation beginline="33" endline="88" begincolumn="7" endcolumn="25" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'markArray' (lines '33'-'88').
+</violation>
+<violation beginline="37" endline="37" begincolumn="21" endcolumn="36" rule="AvoidThrowingRawExceptionTypes" ruleset="Design" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#avoidthrowingrawexceptiontypes" priority="1">
+Avoid throwing raw exception types.
+</violation>
+<violation beginline="40" endline="40" begincolumn="9" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '40'-'40').
+</violation>
+<violation beginline="40" endline="40" begincolumn="9" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '40'-'40').
+</violation>
+<violation beginline="40" endline="52" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '40'-'52').
+</violation>
+<violation beginline="40" endline="52" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '40'-'52').
+</violation>
+<violation beginline="40" endline="62" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '40'-'62').
+</violation>
+<violation beginline="40" endline="62" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '40'-'62').
+</violation>
+<violation beginline="40" endline="72" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '40'-'72').
+</violation>
+<violation beginline="40" endline="72" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '40'-'72').
+</violation>
+<violation beginline="40" endline="88" begincolumn="9" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'markArray' (lines '40'-'88').
+</violation>
+<violation beginline="40" endline="88" begincolumn="9" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'markArray' (lines '40'-'88').
+</violation>
+<violation beginline="41" endline="41" begincolumn="9" endcolumn="26" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="namePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'namePresent' (lines '41'-'41').
+</violation>
+<violation beginline="41" endline="41" begincolumn="9" endcolumn="26" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="namePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'namePresent' (lines '41'-'41').
+</violation>
+<violation beginline="41" endline="88" begincolumn="9" endcolumn="26" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="namePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'namePresent' (lines '41'-'88').
+</violation>
+<violation beginline="41" endline="88" begincolumn="9" endcolumn="26" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="namePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'namePresent' (lines '41'-'88').
+</violation>
+<violation beginline="48" endline="48" begincolumn="11" endcolumn="34" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="49" endline="55" begincolumn="9" endcolumn="9" rule="ConfusingTernary" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#confusingternary" priority="3">
+Avoid if (x != y) ..; else ..;
+</violation>
+<violation beginline="50" endline="50" begincolumn="21" endcolumn="36" rule="AvoidThrowingRawExceptionTypes" ruleset="Design" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#avoidthrowingrawexceptiontypes" priority="1">
+Avoid throwing raw exception types.
+</violation>
+<violation beginline="52" endline="53" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '52'-'53').
+</violation>
+<violation beginline="52" endline="53" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '52'-'53').
+</violation>
+<violation beginline="53" endline="52" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '53'-'52').
+</violation>
+<violation beginline="53" endline="52" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '53'-'52').
+</violation>
+<violation beginline="53" endline="62" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '53'-'62').
+</violation>
+<violation beginline="53" endline="62" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '53'-'62').
+</violation>
+<violation beginline="53" endline="72" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '53'-'72').
+</violation>
+<violation beginline="53" endline="72" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '53'-'72').
+</violation>
+<violation beginline="53" endline="88" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'markArray' (lines '53'-'88').
+</violation>
+<violation beginline="53" endline="88" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'markArray' (lines '53'-'88').
+</violation>
+<violation beginline="54" endline="88" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="pricePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'pricePresent' (lines '54'-'88').
+</violation>
+<violation beginline="54" endline="88" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="pricePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'pricePresent' (lines '54'-'88').
+</violation>
+<violation beginline="58" endline="58" begincolumn="11" endcolumn="37" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="59" endline="65" begincolumn="9" endcolumn="9" rule="ConfusingTernary" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#confusingternary" priority="3">
+Avoid if (x != y) ..; else ..;
+</violation>
+<violation beginline="60" endline="60" begincolumn="21" endcolumn="36" rule="AvoidThrowingRawExceptionTypes" ruleset="Design" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#avoidthrowingrawexceptiontypes" priority="1">
+Avoid throwing raw exception types.
+</violation>
+<violation beginline="62" endline="63" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '62'-'63').
+</violation>
+<violation beginline="62" endline="63" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '62'-'63').
+</violation>
+<violation beginline="63" endline="52" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '63'-'52').
+</violation>
+<violation beginline="63" endline="52" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '63'-'52').
+</violation>
+<violation beginline="63" endline="62" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '63'-'62').
+</violation>
+<violation beginline="63" endline="62" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '63'-'62').
+</violation>
+<violation beginline="63" endline="72" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '63'-'72').
+</violation>
+<violation beginline="63" endline="72" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '63'-'72').
+</violation>
+<violation beginline="63" endline="88" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'markArray' (lines '63'-'88').
+</violation>
+<violation beginline="63" endline="88" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'markArray' (lines '63'-'88').
+</violation>
+<violation beginline="64" endline="88" begincolumn="11" endcolumn="32" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="quantityPresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'quantityPresent' (lines '64'-'88').
+</violation>
+<violation beginline="64" endline="88" begincolumn="11" endcolumn="32" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="quantityPresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'quantityPresent' (lines '64'-'88').
+</violation>
+<violation beginline="68" endline="68" begincolumn="11" endcolumn="33" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="69" endline="75" begincolumn="9" endcolumn="9" rule="ConfusingTernary" ruleset="Code Style" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#confusingternary" priority="3">
+Avoid if (x != y) ..; else ..;
+</violation>
+<violation beginline="70" endline="70" begincolumn="21" endcolumn="36" rule="AvoidThrowingRawExceptionTypes" ruleset="Design" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#avoidthrowingrawexceptiontypes" priority="1">
+Avoid throwing raw exception types.
+</violation>
+<violation beginline="72" endline="73" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '72'-'73').
+</violation>
+<violation beginline="72" endline="73" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '72'-'73').
+</violation>
+<violation beginline="73" endline="52" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '73'-'52').
+</violation>
+<violation beginline="73" endline="52" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '73'-'52').
+</violation>
+<violation beginline="73" endline="62" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '73'-'62').
+</violation>
+<violation beginline="73" endline="62" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '73'-'62').
+</violation>
+<violation beginline="73" endline="72" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '73'-'72').
+</violation>
+<violation beginline="73" endline="72" begincolumn="11" endcolumn="29" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'markArray' (lines '73'-'72').
+</violation>
+<violation beginline="73" endline="88" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'markArray' (lines '73'-'88').
+</violation>
+<violation beginline="73" endline="88" begincolumn="11" endcolumn="33" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="markArray" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'markArray' (lines '73'-'88').
+</violation>
+<violation beginline="74" endline="88" begincolumn="11" endcolumn="28" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="typePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'typePresent' (lines '74'-'88').
+</violation>
+<violation beginline="74" endline="88" begincolumn="11" endcolumn="28" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.assignment1.parser" class="Validity" method="validate" variable="typePresent" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'typePresent' (lines '74'-'88').
+</violation>
+<violation beginline="79" endline="79" begincolumn="17" endcolumn="32" rule="AvoidThrowingRawExceptionTypes" ruleset="Design" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#avoidthrowingrawexceptiontypes" priority="1">
+Avoid throwing raw exception types.
+</violation>
+<violation beginline="84" endline="84" begincolumn="19" endcolumn="34" rule="AvoidThrowingRawExceptionTypes" ruleset="Design" package="com.assignment1.parser" class="Validity" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#avoidthrowingrawexceptiontypes" priority="1">
+Avoid throwing raw exception types.
+</violation>
+</file>
+<file name="C:\Users\Arjun Singh\IdeaProjects\SalesPrice\src\main\java\com\assignment1\userinterface\UserInterface.java">
+<violation beginline="8" endline="62" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.userinterface" class="UserInterface" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="8" endline="62" begincolumn="8" endcolumn="1" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.assignment1.userinterface" class="UserInterface" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="12" endline="12" begincolumn="13" endcolumn="14" rule="ShortVariable" ruleset="Code Style" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" variable="sc" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like sc
+</violation>
+<violation beginline="12" endline="12" begincolumn="13" endcolumn="14" rule="CloseResource" ruleset="Error Prone" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" variable="sc" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
+Ensure that resources like this Scanner object are closed after use
+</violation>
+<violation beginline="12" endline="12" begincolumn="13" endcolumn="14" rule="CloseResource" ruleset="Error Prone" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" variable="sc" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
+Ensure that resources like this Scanner object are closed after use
+</violation>
+<violation beginline="12" endline="12" begincolumn="5" endcolumn="39" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'sc' could be declared final
+</violation>
+<violation beginline="13" endline="13" begincolumn="5" endcolumn="20" rule="SystemPrintln" ruleset="Best Practices" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.print is used
+</violation>
+<violation beginline="14" endline="14" begincolumn="5" endcolumn="31" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'name' could be declared final
+</violation>
+<violation beginline="15" endline="15" begincolumn="10" endcolumn="24" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="15" endline="15" begincolumn="10" endcolumn="24" rule="LawOfDemeter" ruleset="Design" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
+Potential violation of Law of Demeter (object not created locally)
+</violation>
+<violation beginline="18" endline="18" begincolumn="5" endcolumn="20" rule="SystemPrintln" ruleset="Best Practices" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.print is used
+</violation>
+<violation beginline="19" endline="19" begincolumn="5" endcolumn="32" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'price' could be declared final
+</violation>
+<violation beginline="20" endline="20" begincolumn="10" endcolumn="25" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="20" endline="20" begincolumn="10" endcolumn="25" rule="LawOfDemeter" ruleset="Design" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
+Potential violation of Law of Demeter (object not created locally)
+</violation>
+<violation beginline="21" endline="21" begincolumn="11" endcolumn="12" rule="UseStringBufferForStringAppends" ruleset="Performance" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_performance.html#usestringbufferforstringappends" priority="3">
+Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+</violation>
+<violation beginline="23" endline="23" begincolumn="5" endcolumn="20" rule="SystemPrintln" ruleset="Best Practices" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.print is used
+</violation>
+<violation beginline="24" endline="24" begincolumn="5" endcolumn="35" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'quantity' could be declared final
+</violation>
+<violation beginline="25" endline="25" begincolumn="10" endcolumn="28" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="25" endline="25" begincolumn="10" endcolumn="28" rule="LawOfDemeter" ruleset="Design" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
+Potential violation of Law of Demeter (object not created locally)
+</violation>
+<violation beginline="26" endline="26" begincolumn="11" endcolumn="12" rule="UseStringBufferForStringAppends" ruleset="Performance" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_performance.html#usestringbufferforstringappends" priority="3">
+Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+</violation>
+<violation beginline="28" endline="28" begincolumn="5" endcolumn="20" rule="SystemPrintln" ruleset="Best Practices" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.print is used
+</violation>
+<violation beginline="29" endline="29" begincolumn="5" endcolumn="31" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'type' could be declared final
+</violation>
+<violation beginline="30" endline="30" begincolumn="10" endcolumn="24" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="30" endline="30" begincolumn="10" endcolumn="24" rule="LawOfDemeter" ruleset="Design" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
+Potential violation of Law of Demeter (object not created locally)
+</violation>
+<violation beginline="31" endline="31" begincolumn="11" endcolumn="12" rule="UseStringBufferForStringAppends" ruleset="Performance" package="com.assignment1.userinterface" class="UserInterface" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_performance.html#usestringbufferforstringappends" priority="3">
+Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+</violation>
+<violation beginline="39" endline="39" begincolumn="5" endcolumn="22" rule="SystemPrintln" ruleset="Best Practices" package="com.assignment1.userinterface" class="UserInterface" method="showUsageMessage" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="43" endline="43" begincolumn="5" endcolumn="22" rule="SystemPrintln" ruleset="Best Practices" package="com.assignment1.userinterface" class="UserInterface" method="showUsageMessage" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="51" endline="51" begincolumn="29" endcolumn="51" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment1.userinterface" class="UserInterface" method="giveOutput" variable="itemArr" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'itemArr' is not assigned and could be declared final
+</violation>
+<violation beginline="52" endline="52" begincolumn="5" endcolumn="22" rule="SystemPrintln" ruleset="Best Practices" package="com.assignment1.userinterface" class="UserInterface" method="giveOutput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="53" endline="53" begincolumn="10" endcolumn="18" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment1.userinterface" class="UserInterface" method="giveOutput" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'item' could be declared final
+</violation>
+<violation beginline="54" endline="54" begincolumn="7" endcolumn="24" rule="SystemPrintln" ruleset="Best Practices" package="com.assignment1.userinterface" class="UserInterface" method="giveOutput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+</file>
+<file name="C:\Users\Arjun Singh\IdeaProjects\SalesPrice\src\main\java\com\assignment1\userinterface\UserInterfaceHandler.java">
+<violation beginline="6" endline="12" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.userinterface" class="UserInterfaceHandler" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="7" endline="7" begincolumn="3" endcolumn="21" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.userinterface" class="UserInterfaceHandler" method="takeInput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="9" endline="9" begincolumn="3" endcolumn="29" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.userinterface" class="UserInterfaceHandler" method="showUsageMessage" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="11" endline="11" begincolumn="22" endcolumn="36" rule="LooseCoupling" ruleset="Best Practices" package="com.assignment1.userinterface" class="UserInterfaceHandler" method="giveOutput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_bestpractices.html#loosecoupling" priority="3">
+Avoid using implementation types like 'ArrayList'; use the interface instead
+</violation>
+<violation beginline="11" endline="11" begincolumn="3" endcolumn="46" rule="CommentRequired" ruleset="Documentation" package="com.assignment1.userinterface" class="UserInterfaceHandler" method="giveOutput" externalInfoUrl="https://pmd.github.io/pmd-6.26.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
 Public method and constructor comments are required
 </violation>
 </file>

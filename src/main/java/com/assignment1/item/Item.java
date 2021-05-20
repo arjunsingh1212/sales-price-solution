@@ -1,7 +1,8 @@
 package com.assignment1.item;
 
 public class Item {
-  private String name, type;
+  private String name;
+  private String type;
   private int quantity;
   private double price;
   private double tax;
@@ -21,7 +22,6 @@ public class Item {
     this.type = type;
     this.tax = 0;
   }
-
 
 
   public String getName() {
@@ -64,31 +64,30 @@ public class Item {
     this.tax = tax;
   }
 
-  public boolean comparison(Item obj) {
-    return name.equals(obj.name) && price == obj.price && quantity == obj.quantity && type.equals(obj.type);
-  }
-
   public String toString() {
-    return name + String.valueOf(price) + String.valueOf(quantity) + type;
+    return name + price + quantity + type;
   }
 
   public double calculateTax() {
     switch (type) {
       case "raw":
-        tax = 0.125 * price;
+        tax = 0.125 * price; //12.5% of price
         break;
       case "manufactured":
-        tax = 0.125 * price + 0.02 * (price + 0.125 * price);
+        tax = 0.125 * price + 0.02 * (price + 0.125 * price);  //12.5% + 2% of the result
         break;
       case "imported":
         double importDuty = 0.1 * price;
-        if (price + importDuty <= 100) {
-          tax = importDuty + 5;
-        } else if (price + importDuty > 100 && price + importDuty <= 200) {
-          tax = importDuty + 10;
-        } else if (price + importDuty > 200) {
-          tax = importDuty + 0.05 * (price + importDuty);
+        double finalCost = price + importDuty; //Further additional surcharge to be added according to final cost
+        if (finalCost <= 100) {
+          tax = finalCost + 5 - price;  //subtract price to have only tax, not final price
+        } else if (finalCost > 100 && finalCost <= 200) {
+          tax = finalCost + 10 - price;
+        } else if (finalCost > 200) {
+          tax = finalCost + 0.05 * finalCost - price;
         }
+        break;
+      default:
         break;
     }
     return tax;

@@ -1,11 +1,13 @@
 package com.assignment1.userinterface;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.assignment1.item.Item;
+import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 
 public class UserInterfaceTest {
   private UserInterfaceHandler userInterfaceObj;
@@ -26,7 +28,9 @@ public class UserInterfaceTest {
   void giveOutputTest() {
     Item item1 = new Item();
     Item item2 = new Item();
-    Item[] items = {item1, item2};
+    ArrayList<Item> items = new ArrayList<Item>();
+    items.add(item1);
+    items.add(item2);
     assertTrue(userInterfaceObj.giveOutput(items));
   }
 }
