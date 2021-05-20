@@ -1,13 +1,14 @@
 package com.assignment1;
 
 import com.assignment1.item.Item;
+import com.assignment1.item.TaxCalculator;
+import com.assignment1.item.Taxable;
 import com.assignment1.parser.CommandLineParser;
 import com.assignment1.parser.Parsable;
 import com.assignment1.parser.Valid;
 import com.assignment1.parser.Validity;
 import com.assignment1.userinterface.UserInterface;
 import com.assignment1.userinterface.UserInterfaceHandler;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -23,10 +24,11 @@ public class Runner {
     Valid validObj = new Validity(); //Object having implementation for validation
     Parsable parserObj = new CommandLineParser(validObj); //Parser with cli implementation
     UserInterfaceHandler uiObj = new UserInterface();  //Object to deal with User I/O
+    Taxable taxObj = new TaxCalculator();
 
     try {
       Item item = parserObj.parse(cliInput); //Parse the initial Command Line Arguments (string)
-      double taxOutput = item.calculateTax(); //Calculate Tax, which is the requirement according to problem statement
+      double taxOutput = taxObj.calculateTax(item); //Calculate Tax, which is the requirement according to problem statement
       item.setTax(taxOutput);  //Populate the Item's tax property using setter
       itemArray.add(item);  //Add item to our list of items
     } catch (RuntimeException e) {
@@ -42,7 +44,7 @@ public class Runner {
           cliInput = uiObj.takeInput(); //Takes input from user by prompting to enter values
           try {  //Same logic as explained before while loop
             Item item = parserObj.parse(cliInput);
-            double taxOutput = item.calculateTax();
+            double taxOutput = taxObj.calculateTax(item);
             item.setTax(taxOutput);
             itemArray.add(item);
           } catch (Exception e) {

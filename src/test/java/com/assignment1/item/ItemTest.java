@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 class ItemTest {
 
   private Item item;
+  private Taxable itemTax;
 
   @BeforeEach
   void createObj() {
@@ -46,32 +47,37 @@ class ItemTest {
 
   @Test
   void calculateTaxRaw() {
-    Item item = new Item("Book",50,3,"raw");
-    assertEquals(6.25,item.calculateTax());
+    item = new Item("Book",50,3,"raw");
+    itemTax = new TaxCalculator();
+    assertEquals(6.25,itemTax.calculateTax(item));
   }
 
   @Test
   void calculateTaxManufactured() {
     Item item = new Item("Book",50,3,"manufactured");
-    assertEquals(7.375,item.calculateTax());
+    itemTax = new TaxCalculator();
+    assertEquals(7.375,itemTax.calculateTax(item));
   }
 
   @Test
   void calculateTaxImportedBranch1() {
     Item item = new Item("Book",50,3,"imported");
-    assertEquals(10,item.calculateTax());
+    itemTax = new TaxCalculator();
+    assertEquals(10,itemTax.calculateTax(item));
   }
 
   @Test
   void calculateTaxImportedBranch2() {
     Item item = new Item("Book",100,3,"imported");
-    assertEquals(20,item.calculateTax());
+    itemTax = new TaxCalculator();
+    assertEquals(20,itemTax.calculateTax(item));
   }
 
   @Test
   void calculateTaxImportedBranch3() {
     Item item = new Item("Book",200,3,"imported");
-    assertEquals(31,item.calculateTax());
+    itemTax = new TaxCalculator();
+    assertEquals(31,itemTax.calculateTax(item));
   }
 
 }

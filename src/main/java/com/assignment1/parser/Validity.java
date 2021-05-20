@@ -4,12 +4,12 @@ public class Validity implements Valid {
 
   //check if price is in decimal format. Should have digits and only one . (decimal symbol). Length<=10
   boolean checkFormatPrice(String str) {
-    return str.indexOf('.') == str.lastIndexOf('.') && str.matches("[0-9.]*") && str.length()<=10;
+    return str.indexOf('.') == str.lastIndexOf('.') && str.matches("[0-9.]*") && str.length() <= 10;
   }
 
   //check if quantity is in integer format. Should have digits and should be Natural number). Length<=5
   boolean checkFormatQuantity(String str) {
-    return str.matches("[0-9]*") && Integer.parseInt(str) > 0 && str.length()<=5;
+    return str.matches("[0-9]*") && Integer.parseInt(str) > 0 && str.length() <= 5;
   }
 
   //check type to be one of the three strings
@@ -19,7 +19,7 @@ public class Validity implements Valid {
 
   //check name to be having only alphabets and not empty. Length<=20
   boolean checkFormatName(String str) {
-    return str.matches("^[ A-Za-z]+$") && str.length()<=20;
+    return str.matches("^[ A-Za-z]+$") && str.length() <= 20;
   }
 
   @Override
