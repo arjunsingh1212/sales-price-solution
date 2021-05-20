@@ -6,9 +6,9 @@ com/assignment1/parser/Valid.java
  com.assignment1.parser.Valid
 com/assignment1/item/Item.java
  com.assignment1.item.Item
-com/assignment1/parser/CommandLineParser.java
- com.assignment1.parser.CommandLineParser
-com/assignment1/userinterface/UserInterface.java
- com.assignment1.userinterface.UserInterface
 com/assignment1/parser/Parsable.java
  com.assignment1.parser.Parsable
+com/assignment1/userinterface/UserInterface.java
+ com.assignment1.userinterface.UserInterface
+com/assignment1/parser/CommandLineParser.java
+ com.assignment1.parser.CommandLineParser

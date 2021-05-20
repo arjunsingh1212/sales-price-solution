@@ -4,7 +4,7 @@ import com.assignment1.item.Item;
 
 import java.util.Scanner;
 
-<span class="fc" id="L7">public class UserInterface implements UserInterfaceHandler {</span>
+<span class="nc" id="L7">public class UserInterface implements UserInterfaceHandler {</span>
   @Override
   public String takeInput() {
 <span class="nc" id="L10">    String str = &quot;&quot;;</span>
@@ -26,21 +26,20 @@ import java.util.Scanner;
 
   @Override
   public boolean showUsageMessage() {
-<span class="fc" id="L29">    System.out.println(&quot;-name &lt;first item name&gt;\n&quot; +</span>
+<span class="nc" id="L29">    System.out.println(&quot;-name &lt;first item name&gt;\n&quot; +</span>
             &quot;-price &lt;price of first item&gt;\n&quot; +
             &quot;-quantity &lt;quantity of first item&gt;\n&quot; +
             &quot;-type &lt;type of first item&gt;&quot;);
-<span class="fc" id="L33">    return true;</span>
+<span class="nc" id="L33">    return true;</span>
   }
 
   @Override
   public boolean giveOutput(Item[] itemArr) {
-<span class="fc" id="L38">    System.out.println(&quot;item name\t item prize\t sales tax liability per item\t final prize (sales tax + item prize)&quot;);</span>
-<span class="fc bfc" id="L39" title="All 2 branches covered.">    for(int i=0;i&lt;itemArr.length;i++)</span>
-    {
-<span class="fc" id="L41">      System.out.println(itemArr[i].getName() + &quot;\t&quot; + itemArr[i].getPrice() + &quot;\t&quot; +itemArr[i].getTax() +&quot;\t&quot; + itemArr[i].getQuantity()*(itemArr[i].getPrice()+itemArr[i].getTax()));</span>
+<span class="nc" id="L38">    System.out.println(&quot;item name\t item prize\t sales tax liability per item\t final prize (sales tax + item prize)&quot;);</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">    for (Item item : itemArr) {</span>
+<span class="nc" id="L40">      System.out.println(item.getName() + &quot;\t&quot; + item.getPrice() + &quot;\t&quot; + item.getTax() + &quot;\t&quot; + item.getQuantity() * (item.getPrice() + item.getTax()));</span>
     }
-<span class="fc" id="L43">    return true;</span>
+<span class="nc" id="L42">    return true;</span>
   }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

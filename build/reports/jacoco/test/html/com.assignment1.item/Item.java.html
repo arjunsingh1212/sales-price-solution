@@ -14,74 +14,84 @@ public class Item {
 <span class="fc" id="L14">    tax = 0.0;</span>
 <span class="fc" id="L15">  }</span>
 
-<span class="nc" id="L17">  public Item(String name, double price, int quantity, String type) {</span>
-<span class="nc" id="L18">    this.name = name;</span>
-<span class="nc" id="L19">    this.price = price;</span>
-<span class="nc" id="L20">    this.quantity = quantity;</span>
-<span class="nc" id="L21">    this.type = type;</span>
-<span class="nc" id="L22">    this.tax = 0;</span>
-<span class="nc" id="L23">  }</span>
+<span class="fc" id="L17">  public Item(String name, double price, int quantity, String type) {</span>
+<span class="fc" id="L18">    this.name = name;</span>
+<span class="fc" id="L19">    this.price = price;</span>
+<span class="fc" id="L20">    this.quantity = quantity;</span>
+<span class="fc" id="L21">    this.type = type;</span>
+<span class="fc" id="L22">    this.tax = 0;</span>
+<span class="fc" id="L23">  }</span>
+
+
 
   public String getName() {
-<span class="fc" id="L26">    return name;</span>
+<span class="nc" id="L28">    return name;</span>
   }
 
   public void setName(String name) {
-<span class="nc" id="L30">    this.name = name;</span>
-<span class="nc" id="L31">  }</span>
+<span class="fc" id="L32">    this.name = name;</span>
+<span class="fc" id="L33">  }</span>
 
   public String getType() {
-<span class="nc" id="L34">    return type;</span>
+<span class="nc" id="L36">    return type;</span>
   }
 
   public void setType(String type) {
-<span class="nc" id="L38">    this.type = type;</span>
-<span class="nc" id="L39">  }</span>
+<span class="fc" id="L40">    this.type = type;</span>
+<span class="fc" id="L41">  }</span>
 
   public double getPrice() {
-<span class="fc" id="L42">    return price;</span>
+<span class="nc" id="L44">    return price;</span>
   }
 
   public void setPrice(double price) {
-<span class="nc" id="L46">    this.price = price;</span>
-<span class="nc" id="L47">  }</span>
+<span class="fc" id="L48">    this.price = price;</span>
+<span class="fc" id="L49">  }</span>
 
   public int getQuantity() {
-<span class="fc" id="L50">    return quantity;</span>
+<span class="nc" id="L52">    return quantity;</span>
   }
 
   public void setQuantity(int quantity) {
-<span class="nc" id="L54">    this.quantity = quantity;</span>
-<span class="nc" id="L55">  }</span>
+<span class="fc" id="L56">    this.quantity = quantity;</span>
+<span class="fc" id="L57">  }</span>
 
   public double getTax() {
-<span class="fc" id="L58">    return tax;</span>
+<span class="nc" id="L60">    return tax;</span>
   }
 
   public void setTax(double tax) {
-<span class="nc" id="L62">    this.tax = tax;</span>
-<span class="nc" id="L63">  }</span>
+<span class="nc" id="L64">    this.tax = tax;</span>
+<span class="nc" id="L65">  }</span>
+
+  public boolean comparison(Item obj) {
+<span class="nc bnc" id="L68" title="All 8 branches missed.">    return name.equals(obj.name) &amp;&amp; price == obj.price &amp;&amp; quantity == obj.quantity &amp;&amp; type.equals(obj.type);</span>
+  }
+
+  public String toString() {
+<span class="fc" id="L72">    return name + String.valueOf(price) + String.valueOf(quantity) + type;</span>
+  }
 
   public double calculateTax() {
-<span class="nc bnc" id="L66" title="All 4 branches missed.">    switch (type) {</span>
+<span class="nc bnc" id="L76" title="All 4 branches missed.">    switch (type) {</span>
       case &quot;raw&quot;:
-<span class="nc" id="L68">        tax = 0.125 * price;</span>
-<span class="nc" id="L69">        break;</span>
+<span class="nc" id="L78">        tax = 0.125 * price;</span>
+<span class="nc" id="L79">        break;</span>
       case &quot;manufactured&quot;:
-<span class="nc" id="L71">        tax = 0.125 * price + 0.02 * (price + 0.125 * price);</span>
-<span class="nc" id="L72">        break;</span>
+<span class="nc" id="L81">        tax = 0.125 * price + 0.02 * (price + 0.125 * price);</span>
+<span class="nc" id="L82">        break;</span>
       case &quot;imported&quot;:
-<span class="nc" id="L74">        double importDuty = 0.1 * price;</span>
-<span class="nc bnc" id="L75" title="All 2 branches missed.">        if (price + importDuty &lt;= 100) {</span>
-<span class="nc" id="L76">          tax = importDuty + 5;</span>
-<span class="nc bnc" id="L77" title="All 4 branches missed.">        } else if (price + importDuty &gt; 100 &amp;&amp; price + importDuty &lt;= 200) {</span>
-<span class="nc" id="L78">          tax = importDuty + 10;</span>
-<span class="nc bnc" id="L79" title="All 2 branches missed.">        } else if (price + importDuty &gt; 200) {</span>
-<span class="nc" id="L80">          tax = importDuty + 0.05 * (price + importDuty);</span>
+<span class="nc" id="L84">        double importDuty = 0.1 * price;</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">        if (price + importDuty &lt;= 100) {</span>
+<span class="nc" id="L86">          tax = importDuty + 5;</span>
+<span class="nc bnc" id="L87" title="All 4 branches missed.">        } else if (price + importDuty &gt; 100 &amp;&amp; price + importDuty &lt;= 200) {</span>
+<span class="nc" id="L88">          tax = importDuty + 10;</span>
+<span class="nc bnc" id="L89" title="All 2 branches missed.">        } else if (price + importDuty &gt; 200) {</span>
+<span class="nc" id="L90">          tax = importDuty + 0.05 * (price + importDuty);</span>
         }
         break;
     }
-<span class="nc" id="L84">    return tax;</span>
+<span class="nc" id="L94">    return tax;</span>
   }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

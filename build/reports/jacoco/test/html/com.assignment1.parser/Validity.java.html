@@ -1,9 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Validity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SalesPrice</a> &gt; <a href="index.source.html" class="el_package">com.assignment1.parser</a> &gt; <span class="el_source">Validity.java</span></div><h1>Validity.java</h1><pre class="source lang-java linenums">package com.assignment1.parser;
 
-<span class="nc" id="L3">public class Validity implements Valid {</span>
+<span class="fc" id="L3">public class Validity implements Valid {</span>
+
+  boolean checkFormatPrice(String str) {
+<span class="pc bpc" id="L6" title="2 of 4 branches missed.">    return str.indexOf('.') == str.lastIndexOf('.') &amp;&amp; str.matches(&quot;[0-9.]*&quot;);</span>
+  }
+
+  boolean checkFormatQuantity(String str) {
+<span class="pc bpc" id="L10" title="2 of 4 branches missed.">    return str.matches(&quot;[0-9]*&quot;) &amp;&amp; Integer.parseInt(str) &gt; 0;</span>
+  }
+
+  boolean checkFormatType(String str) {
+<span class="pc bpc" id="L14" title="3 of 6 branches missed.">    return str.equals(&quot;manufactured&quot;) || str.equals(&quot;raw&quot;) || str.equals(&quot;imported&quot;);</span>
+  }
+
+  boolean checkFormatName(String str) {
+<span class="fc" id="L18">    return str.matches(&quot;^[ A-Za-z]+$&quot;);</span>
+  }
+
   @Override
   public boolean validate(String[] args) {
-<span class="nc" id="L6">    return true;</span>
+<span class="fc" id="L23">    int len = args.length;</span>
+<span class="fc" id="L24">    boolean[] markArray = new boolean[len];</span>
+<span class="fc" id="L25">    boolean namePresent = false;</span>
+<span class="fc" id="L26">    boolean typePresent = false;</span>
+
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">    if (!args[0].equals(&quot;-name&quot;)) {</span>
+<span class="nc" id="L29">      throw new RuntimeException(&quot;Invalid Arguments Exception&quot;);</span>
+    } else {
+<span class="fc" id="L31">      markArray[0] = true;</span>
+<span class="fc" id="L32">      int ptr = 1;</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">      while (args[ptr].charAt(0) != '-') {</span>
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">        if (!checkFormatName(args[ptr]))</span>
+<span class="nc" id="L35">          throw new RuntimeException(&quot;Invalid Arguments Exception&quot;);</span>
+
+<span class="fc" id="L37">        markArray[ptr] = true;</span>
+<span class="fc" id="L38">        namePresent = true;</span>
+<span class="fc" id="L39">        ptr++;</span>
+      }
+
+    }
+
+<span class="fc bfc" id="L44" title="All 2 branches covered.">    for (int i = 0; i &lt; len - 1; i++) {</span>
+<span class="pc bpc" id="L45" title="1 of 4 branches missed.">      if (args[i].equals(&quot;-price&quot;) &amp;&amp; args[i + 1].charAt(0) != '-') {</span>
+<span class="pc bpc" id="L46" title="1 of 2 branches missed.">        if (!checkFormatPrice(args[i + 1])) {</span>
+<span class="nc" id="L47">          throw new RuntimeException(&quot;Invalid Arguments Exception&quot;);</span>
+        } else {
+<span class="fc" id="L49">          markArray[i] = true;</span>
+<span class="fc" id="L50">          markArray[i + 1] = true;</span>
+        }
+      }
+
+<span class="pc bpc" id="L54" title="1 of 4 branches missed.">      if (args[i].equals(&quot;-quantity&quot;) &amp;&amp; args[i + 1].charAt(0) != '-') {</span>
+<span class="pc bpc" id="L55" title="1 of 2 branches missed.">        if (!checkFormatQuantity(args[i + 1])) {</span>
+<span class="nc" id="L56">          throw new RuntimeException(&quot;Invalid Arguments Exception&quot;);</span>
+        } else {
+<span class="fc" id="L58">          markArray[i] = true;</span>
+<span class="fc" id="L59">          markArray[i + 1] = true;</span>
+        }
+      }
+
+<span class="pc bpc" id="L63" title="1 of 4 branches missed.">      if (args[i].equals(&quot;-type&quot;) &amp;&amp; args[i + 1].charAt(0) != '-') {</span>
+<span class="pc bpc" id="L64" title="1 of 2 branches missed.">        if (!checkFormatType(args[i + 1])) {</span>
+<span class="nc" id="L65">          throw new RuntimeException(&quot;Invalid Arguments Exception&quot;);</span>
+        } else {
+<span class="fc" id="L67">          typePresent = true;</span>
+<span class="fc" id="L68">          markArray[i] = true;</span>
+<span class="fc" id="L69">          markArray[i + 1] = true;</span>
+        }
+      }
+
+
+    }
+<span class="pc bpc" id="L75" title="2 of 4 branches missed.">    if (!namePresent || !typePresent) {</span>
+<span class="nc" id="L76">      throw new RuntimeException(&quot;Invalid Arguments Exception&quot;);</span>
+
+    }
+<span class="fc bfc" id="L79" title="All 2 branches covered.">    for (int itr = 0; itr &lt; len; itr++) {</span>
+<span class="pc bpc" id="L80" title="1 of 2 branches missed.">      if (!markArray[itr])</span>
+<span class="nc" id="L81">        throw new RuntimeException(&quot;Invalid Arguments Exception&quot;);</span>
+    }
+<span class="fc" id="L83">    return true;</span>
   }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

@@ -22,6 +22,8 @@ public class Item {
     this.tax = 0;
   }
 
+
+
   public String getName() {
     return name;
   }
@@ -64,6 +66,10 @@ public class Item {
 
   public boolean comparison(Item obj) {
     return name.equals(obj.name) && price == obj.price && quantity == obj.quantity && type.equals(obj.type);
+  }
+
+  public String toString() {
+    return name + String.valueOf(price) + String.valueOf(quantity) + type;
   }
 
   public double calculateTax() {

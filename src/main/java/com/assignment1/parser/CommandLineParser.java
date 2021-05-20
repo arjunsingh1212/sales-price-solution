@@ -21,13 +21,16 @@ public class CommandLineParser implements Parsable {
     if (isValid) {
       String nameValue = "";
       double priceValue = 0;
-      int quantityValue = 0;
+      int quantityValue = 1;
       String typeValue = "";
       int nameEndPointer = 0;
       for (int i = 1; i < args.length; i++) {
-        if (args[i].charAt(0) != '-')
-          nameValue += args[i];
-        else {
+        if (args[i].charAt(0) != '-') {
+          if (args[i + 1].charAt(0) != '-')
+            nameValue += args[i] + " ";
+          else
+            nameValue += args[i];
+        } else {
           nameEndPointer = i;
           break;
         }
@@ -37,10 +40,10 @@ public class CommandLineParser implements Parsable {
         if (args[i].equals("-price")) {
           priceValue = Double.parseDouble(args[i + 1]);
         }
-        if (args[i].equals("quantity")) {
+        if (args[i].equals("-quantity")) {
           quantityValue = Integer.parseInt(args[i + 1]);
         }
-        if (args[i].equals("type")) {
+        if (args[i].equals("-type")) {
           typeValue = args[i + 1];
         }
       }
