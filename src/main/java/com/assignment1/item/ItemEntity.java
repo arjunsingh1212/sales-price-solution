@@ -1,13 +1,21 @@
 package com.assignment1.item;
 
-public class Item {
+/** Class as blueprint for Item Entity */
+public class ItemEntity {
+
+  /** Name of item */
   private String name;
+  /** type(raw, manufactured, imported) of item */
   private String type;
+  /** quantity of item */
   private int quantity;
+  /** price of item */
   private double price;
+  /** tax of item */
   private double tax;
 
-  public Item() {
+  /** Construction initializing default values */
+  public ItemEntity() {
     name = "";
     type = "";
     quantity = 1;
@@ -15,7 +23,8 @@ public class Item {
     tax = 0.0;
   }
 
-  public Item(String name, double price, int quantity, String type) {
+  /** Overloaded Constructor */
+  public ItemEntity(final String name, final double price, final int quantity, final String type) {
     this.name = name;
     this.price = price;
     this.quantity = quantity;
@@ -23,47 +32,57 @@ public class Item {
     this.tax = 0;
   }
 
-
+  /** Getter */
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  /** Setter */
+  public void setName(final String name) {
     this.name = name;
   }
 
+  /** Getter */
   public String getType() {
     return type;
   }
 
-  public void setType(String type) {
+  /** Setter */
+  public void setType(final String type) {
     this.type = type;
   }
 
+  /** Getter */
   public double getPrice() {
     return price;
   }
 
-  public void setPrice(double price) {
+  /** Setter */
+  public void setPrice(final double price) {
     this.price = price;
   }
 
+  /** Getter */
   public int getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(int quantity) {
+  /** Setter */
+  public void setQuantity(final int quantity) {
     this.quantity = quantity;
   }
 
+  /** Getter */
   public double getTax() {
     return tax;
   }
 
-  public void setTax(double tax) {
+  /** Setter */
+  public void setTax(final double tax) {
     this.tax = tax;
   }
 
+  @Override
   public String toString() {
     return name + price + quantity + type;
   }

@@ -1,34 +1,39 @@
 package com.assignment1.userinterface;
 
-import com.assignment1.item.Item;
+import com.assignment1.item.ItemEntity;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface implements UserInterfaceHandler {
   @Override
-  public String takeInput(Environment env) {
+  public String takeInput(final Environment env) {
     String str = "";
-    Scanner sc = new Scanner(System.in);
-    System.out.print("Enter Name: ");
-    String name = env == Environment.TEST ? "DummyName" : sc.nextLine();  //Taking input as Dummy if Test env or from CLI if Production env
-    if (!name.equals("")) { //avoid adding option in the string if value blank
-      str += "-name " + name;
-    }
-    System.out.print("Enter Price: ");
-    String price = env == Environment.TEST ? "100" :sc.nextLine();  //Dummy value 100 for Testing
-    if (!price.equals("")) {
-      str += " -price " + price;
-    }
-    System.out.print("Enter Quantity: ");
-    String quantity = env == Environment.TEST ? "100" :sc.nextLine();
-    if (!quantity.equals("")) {
-      str += " -quantity " + quantity;
-    }
-    System.out.print("Enter Type: ");
-    String type = env == Environment.TEST ? "raw" :sc.nextLine();
-    if (!type.equals("")) {
-      str += " -type " + type;
+    final String space = "";
+    final Scanner scanner = new Scanner(System.in);
+    try {
+      System.out.print("Enter Name: ");
+      final String name = scanner.nextLine();
+      if (!space.equals(name)) { //avoid adding option in the string if value blank
+        str += "-name " + name;
+      }
+      System.out.print("Enter Price: ");
+      final String price = scanner.nextLine();  //Dummy value 100 for Testing
+      if (!space.equals(price)) {
+        str += " -price " + price;
+      }
+      System.out.print("Enter Quantity: ");
+      final String quantity = scanner.nextLine();
+      if (!space.equals(quantity)) {
+        str += " -quantity " + quantity;
+      }
+      System.out.print("Enter Type: ");
+      final String type = scanner.nextLine();
+      if (!space.equals(type)) {
+        str += " -type " + type;
+      }
+    } finally {
+      scanner.close();
     }
     return str;
   }
@@ -47,9 +52,9 @@ public class UserInterface implements UserInterfaceHandler {
   }
 
   @Override
-  public boolean giveOutput(ArrayList<Item> itemArr) {
+  public boolean giveOutput(final ArrayList<ItemEntity> itemArr) {
     System.out.println("ItemName, ItemPrice, SalesTax, ItemQuantity, FinalPrice");
-    for (Item item : itemArr) {
+    for (final ItemEntity item : itemArr) {
       System.out.println(item.getName() +
               ", " + item.getPrice() +
               ", " + item.getTax() +

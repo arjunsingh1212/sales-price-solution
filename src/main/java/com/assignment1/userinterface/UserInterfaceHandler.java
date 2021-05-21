@@ -1,12 +1,15 @@
 package com.assignment1.userinterface;
 
-import com.assignment1.item.Item;
+import com.assignment1.item.ItemEntity;
+
 import java.util.ArrayList;
 
 public interface UserInterfaceHandler {
-  String takeInput(Environment env); //Environment is the enum which is runtime enviroment for Application : TEST or PROD
+  //Environment is the enum which is runtime enviroment for Application
+  // : TEST or PROD
+  String takeInput(Environment env);
 
   boolean showUsageMessage();
 
-  boolean giveOutput(ArrayList<Item> itemArr);
+  boolean giveOutput(ArrayList<ItemEntity> itemArr);
 }

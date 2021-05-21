@@ -1,7 +1,8 @@
 package com.assignment1.parser;
 
-import com.assignment1.item.Item;
+import com.assignment1.exceptions.RuntimeExceptionCustom;
+import com.assignment1.item.ItemEntity;
 
 public interface Parsable {
-  Item parse(String input);
+  ItemEntity parse(String input) throws RuntimeExceptionCustom;
 }
