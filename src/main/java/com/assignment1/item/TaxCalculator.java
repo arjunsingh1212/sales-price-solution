@@ -1,14 +1,19 @@
 package com.assignment1.item;
 
-/** Class to implement TaxCalculation logic */
+/**
+ * Class to implement Tax Calculation logic.
+ */
+@SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class TaxCalculator implements Taxable {
 
-  /** Implementation for calculateTax **/
+  /**
+   * Implementation for calculateTax.
+   **/
   @Override
   public double calculateTax(final ItemEntity item) {
     final String type = item.getType();
-    double tax = 0;
     final double price = item.getPrice();
+    double tax = 0;
     switch (type) {
       case "raw":
         tax = 0.125 * price; //12.5% of price
@@ -20,18 +25,21 @@ public class TaxCalculator implements Taxable {
         final int surcharge100 = 100;
         final int surcharge200 = 200;
         final double importDuty = 0.1 * price;
-        final double finalCost = price + importDuty; //Further additional surcharge to be added according to final cost
+        //Further additional surcharge to be added according to final cost
+        final double finalCost = price + importDuty;
         if (finalCost <= surcharge100) {
-          tax = finalCost + 5 - price;  //subtract price to have only tax, not final price
+          tax = finalCost + 5;
         } else if (finalCost > surcharge100 && finalCost <= surcharge200) {
-          tax = finalCost + 10 - price;
+          tax = finalCost + 10;
         } else if (finalCost > surcharge200) {
-          tax = finalCost + 0.05 * finalCost - price;
+          tax = finalCost + 0.05 * finalCost;
         }
+        tax -= price; //subtract price to have only tax, not final price
         break;
       default:
         break;
     }
     return tax;
+
   }
 }

@@ -42,7 +42,8 @@ class ParserTest {
     @DisplayName("Input with multiple words in name")
     void parseTest3() throws RuntimeExceptionCustom {
       ItemEntity expectedItem = new ItemEntity("Rough Note Book", 50, 3, "imported");
-      ItemEntity actual = parserObj.parse("-name Rough Note Book -price 50 -quantity 3 -type imported");
+      ItemEntity actual = parserObj.parse("-name Rough Note Book "
+              + "-price 50 -quantity 3 -type imported");
       assertEquals(expectedItem.toString(), actual.toString(), "Should parse correctly");
     }
 

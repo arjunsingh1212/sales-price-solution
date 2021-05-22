@@ -1,20 +1,21 @@
 package com.assignment1.item;
 
-/** Class as blueprint for Item Entity */
+/** Class as blueprint for Item Entity. */
+@SuppressWarnings("PMD.DataClass")
 public class ItemEntity {
 
-  /** Name of item */
+  /** Name of item. */
   private String name;
-  /** type(raw, manufactured, imported) of item */
+  /** type(raw, manufactured, imported) of item. */
   private String type;
-  /** quantity of item */
+  /** quantity of item. */
   private int quantity;
-  /** price of item */
+  /** price of item. */
   private double price;
-  /** tax of item */
+  /** tax of item. */
   private double tax;
 
-  /** Construction initializing default values */
+  /** Constructor initializing default values. */
   public ItemEntity() {
     name = "";
     type = "";
@@ -23,7 +24,7 @@ public class ItemEntity {
     tax = 0.0;
   }
 
-  /** Overloaded Constructor */
+  /** Overloaded Constructor. */
   public ItemEntity(final String name, final double price, final int quantity, final String type) {
     this.name = name;
     this.price = price;
@@ -32,56 +33,57 @@ public class ItemEntity {
     this.tax = 0;
   }
 
-  /** Getter */
+  /** Getter. */
   public String getName() {
     return name;
   }
 
-  /** Setter */
+  /** Setter. */
   public void setName(final String name) {
     this.name = name;
   }
 
-  /** Getter */
+  /** Getter. */
   public String getType() {
     return type;
   }
 
-  /** Setter */
+  /** Setter. */
   public void setType(final String type) {
     this.type = type;
   }
 
-  /** Getter */
+  /** Getter. */
   public double getPrice() {
     return price;
   }
 
-  /** Setter */
+  /** Setter. */
   public void setPrice(final double price) {
     this.price = price;
   }
 
-  /** Getter */
+  /** Getter. */
   public int getQuantity() {
     return quantity;
   }
 
-  /** Setter */
+  /** Setter. */
   public void setQuantity(final int quantity) {
     this.quantity = quantity;
   }
 
-  /** Getter */
+  /** Getter. */
   public double getTax() {
     return tax;
   }
 
-  /** Setter */
+  /** Setter. */
   public void setTax(final double tax) {
     this.tax = tax;
   }
 
+  /** Overloading toString(). */
   @Override
   public String toString() {
     return name + price + quantity + type;
