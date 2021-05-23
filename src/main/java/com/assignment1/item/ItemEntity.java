@@ -1,13 +1,15 @@
 package com.assignment1.item;
 
+import com.assignment1.Type;
+
 /** Class as blueprint for Item Entity. */
 @SuppressWarnings("PMD.DataClass")
 public class ItemEntity {
 
   /** Name of item. */
   private String name;
-  /** type(raw, manufactured, imported) of item. */
-  private String type;
+  /** type(RAW, MANUFACTURED, IMPORTED) of item. */
+  private Type type;
   /** quantity of item. */
   private int quantity;
   /** price of item. */
@@ -18,14 +20,14 @@ public class ItemEntity {
   /** Constructor initializing default values. */
   public ItemEntity() {
     name = "";
-    type = "";
+    type = Type.RAW;
     quantity = 1;
     price = 0.0;
     tax = 0.0;
   }
 
   /** Overloaded Constructor. */
-  public ItemEntity(final String name, final double price, final int quantity, final String type) {
+  public ItemEntity(final String name, final double price, final int quantity, final Type type) {
     this.name = name;
     this.price = price;
     this.quantity = quantity;
@@ -44,12 +46,12 @@ public class ItemEntity {
   }
 
   /** Getter. */
-  public String getType() {
+  public Type getType() {
     return type;
   }
 
   /** Setter. */
-  public void setType(final String type) {
+  public void setType(final Type type) {
     this.type = type;
   }
 

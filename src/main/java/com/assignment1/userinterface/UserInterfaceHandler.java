@@ -1,5 +1,6 @@
 package com.assignment1.userinterface;
 
+import com.assignment1.exceptions.RuntimeExceptionCustom;
 import com.assignment1.item.ItemEntity;
 import java.util.List;
 
@@ -8,7 +9,7 @@ public interface UserInterfaceHandler {
   //Environment is the enum which is runtime environment for Application
   //TEST or PROD
   /** Method to take input. */
-  String takeInput(Environment env);
+  ItemEntity takeInput() throws RuntimeExceptionCustom;
 
   /** Method to show message. */
   boolean showUsageMessage();

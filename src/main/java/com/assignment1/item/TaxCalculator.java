@@ -1,5 +1,7 @@
 package com.assignment1.item;
 
+import com.assignment1.Type;
+
 /**
  * Class to implement Tax Calculation logic.
  */
@@ -11,17 +13,17 @@ public class TaxCalculator implements Taxable {
    **/
   @Override
   public double calculateTax(final ItemEntity item) {
-    final String type = item.getType();
+    final Type type = item.getType();
     final double price = item.getPrice();
     double tax = 0;
     switch (type) {
-      case "raw":
+      case RAW:
         tax = 0.125 * price; //12.5% of price
         break;
-      case "manufactured":
+      case MANUFACTURED:
         tax = 0.125 * price + 0.02 * (price + 0.125 * price);  //12.5% + 2% of the result
         break;
-      case "imported":
+      case IMPORTED:
         final int surcharge100 = 100;
         final int surcharge200 = 200;
         final double importDuty = 0.1 * price;
@@ -40,6 +42,5 @@ public class TaxCalculator implements Taxable {
         break;
     }
     return tax;
-
   }
 }

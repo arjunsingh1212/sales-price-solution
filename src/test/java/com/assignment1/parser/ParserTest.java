@@ -3,6 +3,7 @@ package com.assignment1.parser;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.assignment1.Type;
 import com.assignment1.exceptions.RuntimeExceptionCustom;
 import com.assignment1.item.ItemEntity;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,51 +26,51 @@ class ParserTest {
     @Test
     @DisplayName("Simple input test")
     void parseTest1() throws RuntimeExceptionCustom {
-      ItemEntity expectedItem = new ItemEntity("Book", 50, 3, "imported");
-      ItemEntity actual = parserObj.parse("-name Book -price 50 -quantity 3 -type imported");
+      ItemEntity expectedItem = new ItemEntity("Book", 50, 3, Type.IMPORTED);
+      ItemEntity actual = parserObj.parse("-name Book -price 50 -quantity 3 -type IMPORTED");
       assertEquals(expectedItem.toString(), actual.toString(), "Should parse correctly");
     }
 
     @Test
     @DisplayName("Input with 2 words in name")
     void parseTest2() throws RuntimeExceptionCustom {
-      ItemEntity expectedItem = new ItemEntity("Note Book", 50, 3, "imported");
-      ItemEntity actual = parserObj.parse("-name Note Book -price 50 -quantity 3 -type imported");
+      ItemEntity expectedItem = new ItemEntity("Note Book", 50, 3, Type.IMPORTED);
+      ItemEntity actual = parserObj.parse("-name Note Book -price 50 -quantity 3 -type IMPORTED");
       assertEquals(expectedItem.toString(), actual.toString(), "Should parse correctly");
     }
 
     @Test
     @DisplayName("Input with multiple words in name")
     void parseTest3() throws RuntimeExceptionCustom {
-      ItemEntity expectedItem = new ItemEntity("Rough Note Book", 50, 3, "imported");
+      ItemEntity expectedItem = new ItemEntity("Rough Note Book", 50, 3, Type.IMPORTED);
       ItemEntity actual = parserObj.parse("-name Rough Note Book "
-              + "-price 50 -quantity 3 -type imported");
+              + "-price 50 -quantity 3 -type IMPORTED");
       assertEquals(expectedItem.toString(), actual.toString(), "Should parse correctly");
     }
 
     @Test
     @DisplayName("Input with no explicit price option")
     void parseTest4() throws RuntimeExceptionCustom {
-      ItemEntity expectedItem = new ItemEntity("Book", 0, 3, "imported");
-      ItemEntity actual = parserObj.parse("-name Book -quantity 3 -type imported");
+      ItemEntity expectedItem = new ItemEntity("Book", 0, 3, Type.IMPORTED);
+      ItemEntity actual = parserObj.parse("-name Book -quantity 3 -type IMPORTED");
       assertEquals(expectedItem.toString(), actual.toString(), "Should parse correctly");
     }
 
     @Test
     @DisplayName("Input with no explicit quantity option")
     void parseTest5() throws RuntimeExceptionCustom {
-      ItemEntity expectedItem = new ItemEntity("Book", 50, 1, "imported");
-      ItemEntity actual = parserObj.parse("-name Book -price 50 -type imported");
+      ItemEntity expectedItem = new ItemEntity("Book", 50, 1, Type.IMPORTED);
+      ItemEntity actual = parserObj.parse("-name Book -price 50 -type IMPORTED");
       assertEquals(expectedItem.toString(), actual.toString(), "Should parse correctly");
     }
 
     @Test
     @DisplayName("Test with Validator object")
     void parseTest6() throws RuntimeExceptionCustom {
-      Valid validObj = new Validity();
+      Valid validObj = new Validator();
       Parsable parserObj = new CommandLineParser(validObj);
-      ItemEntity expectedItem = new ItemEntity("Book", 50, 1, "imported");
-      ItemEntity actual = parserObj.parse("-name Book -price 50 -type imported");
+      ItemEntity expectedItem = new ItemEntity("Book", 50, 1, Type.IMPORTED);
+      ItemEntity actual = parserObj.parse("-name Book -price 50 -type IMPORTED");
       assertEquals(expectedItem.toString(), actual.toString(), "Should parse correctly");
     }
   }
@@ -80,7 +81,7 @@ class ParserTest {
     @DisplayName("name option missing")
     void parseTest1() {
       Exception except = assertThrows(RuntimeExceptionCustom.class, () -> parserObj.parse(
-              "-price 50 -quantity 3 -type imported"));
+              "-price 50 -quantity 3 -type IMPORTED"));
       String actualMessage = except.getMessage();
       String expectedMessage = "Invalid Arguments Exception"; //"MissingName";
       assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
@@ -100,7 +101,7 @@ class ParserTest {
     @DisplayName("incorrect positioning of name option")
     void parseTest3() {
       Exception except = assertThrows(RuntimeExceptionCustom.class, () -> parserObj.parse(
-              "-price 50 -name Book -quantity 3 -type imported"));
+              "-price 50 -name Book -quantity 3 -type IMPORTED"));
       String actualMessage = except.getMessage();
       String expectedMessage = "Invalid Arguments Exception"; //"IncorrectPositioningNameException";
       assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
@@ -110,7 +111,7 @@ class ParserTest {
     @DisplayName("quantity zero")
     void parseTest4() {
       Exception except = assertThrows(RuntimeExceptionCustom.class, () -> parserObj.parse(
-              "-name Book -price 50 -quantity 0 -type imported"));
+              "-name Book -price 50 -quantity 0 -type IMPORTED"));
       String actualMessage = except.getMessage();
       String expectedMessage = "Invalid Arguments Exception"; //"ZeroQuantityException";
       assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
@@ -120,7 +121,7 @@ class ParserTest {
     @DisplayName("Negative price")
     void parseTest5() {
       Exception except = assertThrows(RuntimeExceptionCustom.class, () -> parserObj.parse(
-              "-name Book -price -50 -quantity 3 -type imported"));
+              "-name Book -price -50 -quantity 3 -type IMPORTED"));
       String actualMessage = except.getMessage();
       String expectedMessage = "Invalid Arguments Exception"; //"NegativePriceException";
       assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
@@ -130,7 +131,7 @@ class ParserTest {
     @DisplayName("Blank value given")
     void parseTest6() {
       Exception except = assertThrows(RuntimeExceptionCustom.class, () -> parserObj.parse(
-              "-name Book -price -quantity 3 -type imported"));
+              "-name Book -price -quantity 3 -type IMPORTED"));
       String actualMessage = except.getMessage();
       String expectedMessage = "Invalid Arguments Exception"; //"BlankValueException";
       assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
@@ -140,7 +141,7 @@ class ParserTest {
     @DisplayName("Quantity datatype")
     void parseTest7() {
       Exception except = assertThrows(RuntimeExceptionCustom.class, () -> parserObj.parse(
-              "-name Book -price 50 -quantity 3.5 -type imported"));
+              "-name Book -price 50 -quantity 3.5 -type IMPORTED"));
       String actualMessage = except.getMessage();
       String expectedMessage = "Invalid Arguments Exception"; //"QuantityFormatException";
       assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
@@ -150,7 +151,7 @@ class ParserTest {
     @DisplayName("Price datatype")
     void parseTest8() {
       Exception except = assertThrows(RuntimeExceptionCustom.class, () -> parserObj.parse(
-              "-name Book -price Hundred -quantity 3 -type imported"));
+              "-name Book -price Hundred -quantity 3 -type IMPORTED"));
       String actualMessage = except.getMessage();
       String expectedMessage = "Invalid Arguments Exception"; //"PriceFormatException";
       assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
@@ -180,7 +181,7 @@ class ParserTest {
     @DisplayName("options repeated")
     void parseTest11() {
       Exception except = assertThrows(RuntimeExceptionCustom.class, () -> parserObj.parse(
-              "-name Book -price 50 -price 50 -quantity 3 -type imported"));
+              "-name Book -price 50 -price 50 -quantity 3 -type IMPORTED"));
       String actualMessage = except.getMessage();
       String expectedMessage = "Invalid Arguments Exception"; //"RepeatedOptionException";
       assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
@@ -190,7 +191,7 @@ class ParserTest {
     @DisplayName("unrecognized Options found")
     void parseTest12() {
       Exception except = assertThrows(RuntimeExceptionCustom.class, () -> parserObj.parse(
-              "-name Book -pricing 50 -quantity 3 -type imported"));
+              "-name Book -pricing 50 -quantity 3 -type IMPORTED"));
       String actualMessage = except.getMessage();
       String expectedMessage = "Invalid Arguments Exception"; //"UnrecognizedOptionException";
       assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
@@ -200,7 +201,7 @@ class ParserTest {
     @DisplayName("something is wrong with input format")
     void parseTest13() {
       Exception except = assertThrows(RuntimeExceptionCustom.class, () -> parserObj.parse(
-              "-name Book -price 50 -quantity 3 -type imported Hi Hello"));
+              "-name Book -price 50 -quantity 3 -type IMPORTED Hi Hello"));
       String actualMessage = except.getMessage();
       String expectedMessage = "Invalid Arguments Exception"; //"IncorrectInputFormatException";
       assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
@@ -210,7 +211,7 @@ class ParserTest {
     @DisplayName("unnecessary or extra options or values in input")
     void parseTest14() {
       Exception except = assertThrows(RuntimeExceptionCustom.class, () -> parserObj.parse(
-              "-name Book -price 50 -quantity 3 -type imported -priority high"));
+              "-name Book -price 50 -quantity 3 -type IMPORTED -priority high"));
       String actualMessage = except.getMessage();
       String expectedMessage = "Invalid Arguments Exception"; //"UnnecessaryOptionValueException";
       assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);

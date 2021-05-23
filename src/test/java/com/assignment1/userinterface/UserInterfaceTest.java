@@ -3,10 +3,10 @@ package com.assignment1.userinterface;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.assignment1.Type;
 import com.assignment1.item.ItemEntity;
 import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,18 +14,21 @@ import org.junit.jupiter.api.Test;
 public class UserInterfaceTest {
   private UserInterfaceHandler userInterfaceObj;
 
+  ItemEntity takeInputDummy() {
+    return new ItemEntity("Book",50.5,4, Type.IMPORTED);
+  }
+
   @BeforeEach
   void createObj() {
     userInterfaceObj = new UserInterface();
   }
 
   @Test
-  @Disabled
-  @DisplayName("Test the Input taking scenario using Environment enum")
+  @DisplayName("Test the Input taking scenario using dummy")
   void takeInputTest() {
-    Environment env = Environment.TEST;
-    assertEquals("-name DummyName -price 100 -quantity 100 -type raw",
-            userInterfaceObj.takeInput(env));
+    ItemEntity item = new ItemEntity("Book",50.5,4, Type.IMPORTED);
+    assertEquals(item.toString(),
+            new UserInterfaceTest().takeInputDummy().toString());
   }
 
   @Test

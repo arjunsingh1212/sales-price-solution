@@ -1,44 +1,53 @@
 package com.assignment1.userinterface;
 
+import com.assignment1.Type;
+import com.assignment1.exceptions.RuntimeExceptionCustom;
 import com.assignment1.item.ItemEntity;
 import java.util.List;
 import java.util.Scanner;
 
-/** Class to implement methods of user interface. */
-@SuppressWarnings({"PMD.SystemPrintln", "UseStringBufferForStringAppends"})
+/**
+ * Class to implement methods of user interface.
+ */
+@SuppressWarnings("PMD.SystemPrintln")
 public class UserInterface implements UserInterfaceHandler {
 
-  /** Implement method to take input from user. */
-  @Override
-  public String takeInput(final Environment env) {
-    final StringBuilder str = new StringBuilder();
-    final String space = "";
-    try (Scanner scanner = new Scanner(System.in)) {
-      System.out.print("Enter Name: ");
-      final String name = scanner.nextLine();
-      if (!space.equals(name)) { //avoid adding option in the string if value blank
-        str.append("-name ").append(name);
-      }
-      System.out.print("Enter Price: ");
-      final String price = scanner.nextLine();
-      if (!space.equals(price)) {
-        str.append("-price ").append(price);
-      }
-      System.out.print("Enter Quantity: ");
-      final String quantity = scanner.nextLine();
-      if (!space.equals(quantity)) {
-        str.append("-quantity ").append(quantity);
-      }
-      System.out.print("Enter Type: ");
-      final String type = scanner.nextLine();
-      if (!space.equals(type)) {
-        str.append("-type ").append(type);
-      }
+  /**
+   * Outputs the string after taking input iff it is valid name.
+   */
+  private String validName(final String name) throws RuntimeExceptionCustom {
+    if (name.matches("^[ A-Za-z]+$") && name.length() <= 20) {
+      return name;
+    } else {
+      throw new RuntimeExceptionCustom("Name format wrong");
     }
-    return str.toString();
   }
 
-  /** Implement method to show usage method. */
+  /**
+   * Implement method to take input from user.
+   */
+  @Override
+  public ItemEntity takeInput() throws RuntimeExceptionCustom {
+    final ItemEntity item = new ItemEntity();
+    final Scanner scanner = new Scanner(System.in);
+    System.out.print("Enter Name: ");
+    final String name = validName(scanner.nextLine());
+    item.setName(name);
+    System.out.print("Enter Price: ");
+    final double price = scanner.nextDouble();
+    item.setPrice(price);
+    System.out.print("Enter Quantity: ");
+    final int quantity = scanner.nextInt();
+    item.setQuantity(quantity);
+    System.out.print("Enter Type: ");
+    final Type type = Type.valueOf(scanner.next());
+    item.setType(type);
+    return item;
+  }
+
+  /**
+   * Implement method to show usage method.
+   */
   @Override
   public boolean showUsageMessage() {
     System.out.println("\n\nEntered format is not correct.\n\n"
@@ -52,7 +61,9 @@ public class UserInterface implements UserInterfaceHandler {
     return true;
   }
 
-  /** Implement method to give output. */
+  /**
+   * Implement method to give output.
+   */
   @Override
   public boolean giveOutput(final List<ItemEntity> itemArr) {
     System.out.println("ItemName, ItemPrice, SalesTax, ItemQuantity, FinalPrice");

@@ -1,19 +1,23 @@
 package com.assignment1.parser;
 
+import com.assignment1.Type;
 import com.assignment1.exceptions.RuntimeExceptionCustom;
+import com.assignment1.item.ItemEntity;
 
 /**
  * Class to implement Valid Interface for validation methods.
  */
 @SuppressWarnings("PMD.DataflowAnomalyAnalysis")
-public class Validity implements Valid {
+public class Validator implements Valid {
 
-  /** Custom Exception class object. */
+  /**
+   * Custom Exception class object.
+   */
   private final transient RuntimeExceptionCustom customException =
           new RuntimeExceptionCustom("Invalid Arguments Exception");
 
   /**
-   * Checks the format according to option.
+   * Checks the format according to option(name, price, quantity, type.
    */
   public boolean checkFormat(final String option, final String str) {
 
@@ -35,9 +39,9 @@ public class Validity implements Valid {
 
     //Type can be either of the three values
     if ("-type".equals(option)) {
-      result = "manufactured".equals(str)
-              || "raw".equals(str)
-              || "imported".equals(str);
+      result = "MANUFACTURED".equals(str)
+              || "RAW".equals(str)
+              || "IMPORTED".equals(str);
     }
 
     //Name can have only Alphabets and length should be <= 20
@@ -59,6 +63,7 @@ public class Validity implements Valid {
 
   /**
    * Check if option is can be considered correct or not.
+   * It should be valid and of right format to be correct.
    */
   public boolean checkOption(final String option,
                              final String currentString,
@@ -69,7 +74,6 @@ public class Validity implements Valid {
       if (checkFormat(option, nextString)) {
         result = true;
       } else {
-        //If price format wrong then throw Exception
         throw customException;
       }
     }
@@ -104,39 +108,50 @@ public class Validity implements Valid {
    * Implementation for Validate method.
    */
   @Override
-  public boolean validate(final String[] args) throws RuntimeExceptionCustom {
+  public ItemEntity validate(final String[] args) throws RuntimeExceptionCustom {
     final int len = args.length;
-    int countvalidArgs = 0;
+    int countValidArgs = 0;
+    final ItemEntity item = new ItemEntity();
 
-    countvalidArgs += checkName(args); //Either exception will be thrown or integer returned
+    countValidArgs += checkName(args); //Either exception will be thrown or integer returned
+
+    final StringBuilder stringBuilder = new StringBuilder();
+    for (int i = 1; i < countValidArgs - 1; i++) {  //Building up the full name of item
+      stringBuilder.append(args[i]).append(" ");
+    }
+    stringBuilder.append(args[countValidArgs - 1]); //Putting last word separately to avoid space
+    item.setName(stringBuilder.toString());
 
     boolean typePresent = false;
     boolean quantityPresent = false;
     boolean pricePresent = false;
-    for (int i = 0; i < len - 1; i++) { //loop to find other options and values
 
+    for (int i = 0; i < len - 1; i++) { //loop to find other options and values
       if (checkOption("-price", args[i], args[i + 1], pricePresent)) {
-        countvalidArgs += 2; //Count increase by 2 for option and value
+        countValidArgs += 2; //Count increase by 2 for option and value
         pricePresent = true;
+        item.setPrice(Double.parseDouble(args[i + 1]));
       }
 
       if (checkOption("-quantity", args[i], args[i + 1], quantityPresent)) {
-        countvalidArgs += 2;
+        countValidArgs += 2;
         quantityPresent = true;
+        item.setQuantity(Integer.parseInt(args[i + 1]));
       }
 
       if (checkOption("-type", args[i], args[i + 1], typePresent)) {
-        countvalidArgs += 2;
+        countValidArgs += 2;
         typePresent = true;
+        item.setType(Type.valueOf(args[i + 1]));
       }
     }
 
-    //type option mandatory and all args significant
-    if (!typePresent || countvalidArgs != len) {
+    //type option mandatory and all args significant(meaning no extra arg)
+    if (!typePresent || countValidArgs != len) {
       throw customException;
     }
 
-    return true;
+    return item;
   }
 }
 
