@@ -19,11 +19,16 @@ import java.util.List;
  * Runner class having main function to run the application.
  * (Acting as controller)
  **/
-@SuppressWarnings({"PMD.SystemPrintln","PMD.DataflowAnomalyAnalysis"})
+@SuppressWarnings({"PMD.SystemPrintln"})
 public final class Runner {
 
   /** ArrayList to store the Items in order to display later. */
   private static final List<ItemEntity> ITEM_ARRAY = new ArrayList<>();
+
+  /** YES Constant for input as 'y' */
+  private static final String RESPONSE_YES = "y";
+  /** NO Constant for input as 'n' */
+  private static final String RESPONSE_NO = "n";
 
   //Private Constructor so that it can't be instantiated.
   private Runner() {
@@ -81,8 +86,6 @@ public final class Runner {
     processCommandLineArgs(validObj,uiObj,taxObj,args);
 
     String inputYesNo;
-    final String positiveResponse = "y";
-    final String negativeResponse = "n";
 
     try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))) {
       while (true) {
@@ -90,14 +93,14 @@ public final class Runner {
         while (true) {
           System.out.print("\nDo you want to enter details of any other item (y/n): ");
           inputYesNo = bufferedReader.readLine();
-          if (negativeResponse.equals(inputYesNo) || positiveResponse.equals(inputYesNo)) {
+          if (RESPONSE_NO.equals(inputYesNo) || RESPONSE_YES.equals(inputYesNo)) {
             break;
           } else {
             System.out.println("Sorry, invalid input.");
           }
         }
 
-        if (negativeResponse.equals(inputYesNo)) {
+        if (RESPONSE_NO.equals(inputYesNo)) {
           break;
         }
 

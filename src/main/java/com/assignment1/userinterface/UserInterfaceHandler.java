@@ -6,8 +6,7 @@ import java.util.List;
 
 /** Interface to declare methods. */
 public interface UserInterfaceHandler {
-  //Environment is the enum which is runtime environment for Application
-  //TEST or PROD
+
   /** Method to take input. */
   ItemEntity takeInput() throws RuntimeExceptionCustom;
 

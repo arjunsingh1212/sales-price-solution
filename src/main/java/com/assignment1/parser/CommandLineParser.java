@@ -4,7 +4,6 @@ import com.assignment1.exceptions.RuntimeExceptionCustom;
 import com.assignment1.item.ItemEntity;
 
 /** Class to implement Parser. */
-@SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class CommandLineParser implements Parsable {
 
   /** Object of Valid class to be used in Parse method. */
