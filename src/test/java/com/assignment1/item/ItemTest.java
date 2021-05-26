@@ -6,10 +6,11 @@ import com.assignment1.Type;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+
 class ItemTest {
 
   private ItemEntity item;
-  private Taxable itemTax;
 
   @BeforeEach
   void createObj() {
@@ -24,8 +25,8 @@ class ItemTest {
 
   @Test
   void taxTest() {
-    item.setTax(5.0);
-    assertEquals(5.0, item.getTax());
+    item.setTax(BigDecimal.valueOf(5.0));
+    assertEquals(BigDecimal.valueOf(5.0), item.getTax());
   }
 
   @Test
@@ -36,8 +37,8 @@ class ItemTest {
 
   @Test
   void priceTest() {
-    item.setPrice(50.5);
-    assertEquals(50.5, item.getPrice());
+    item.setPrice(BigDecimal.valueOf(50.50));
+    assertEquals(BigDecimal.valueOf(50.50), item.getPrice());
   }
 
   @Test
@@ -48,37 +49,37 @@ class ItemTest {
 
   @Test
   void calculateTaxRaw() {
-    item = new ItemEntity("Book", 50, 3, Type.RAW);
-    itemTax = new TaxCalculator();
-    assertEquals(6.25, itemTax.calculateTax(item));
+    item = new ItemEntity("Book", BigDecimal.valueOf(50), 3, Type.RAW);
+    item.calculateTax();
+    assertEquals(6.25,item.getTax().doubleValue());
   }
 
   @Test
   void calculateTaxManufactured() {
-    item = new ItemEntity("Book", 50, 3, Type.MANUFACTURED);
-    itemTax = new TaxCalculator();
-    assertEquals(7.375, itemTax.calculateTax(item));
+    item = new ItemEntity("Book", BigDecimal.valueOf(50), 3, Type.MANUFACTURED);
+    item.calculateTax();
+    assertEquals(7.375,item.getTax().doubleValue());
   }
 
   @Test
   void calculateTaxImportedBranch1() {
-    item = new ItemEntity("Book", 50, 3, Type.IMPORTED);
-    itemTax = new TaxCalculator();
-    assertEquals(10, itemTax.calculateTax(item));
+    item = new ItemEntity("Book", BigDecimal.valueOf(50), 3, Type.IMPORTED);
+    item.calculateTax();
+    assertEquals(10,item.getTax().doubleValue());
   }
 
   @Test
   void calculateTaxImportedBranch2() {
-    item = new ItemEntity("Book", 100, 3, Type.IMPORTED);
-    itemTax = new TaxCalculator();
-    assertEquals(20, itemTax.calculateTax(item));
+    item = new ItemEntity("Book", BigDecimal.valueOf(100), 3, Type.IMPORTED);
+    item.calculateTax();
+    assertEquals(20,item.getTax().doubleValue());
   }
 
   @Test
   void calculateTaxImportedBranch3() {
-    item = new ItemEntity("Book", 200, 3, Type.IMPORTED);
-    itemTax = new TaxCalculator();
-    assertEquals(31, itemTax.calculateTax(item));
+    item = new ItemEntity("Book", BigDecimal.valueOf(200), 3, Type.IMPORTED);
+    item.calculateTax();
+    assertEquals(31,item.getTax().doubleValue());
   }
 
 }

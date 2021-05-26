@@ -1,18 +1,18 @@
 package com.assignment1;
 
-import com.assignment1.exceptions.RuntimeExceptionCustom;
+import com.assignment1.exceptions.GenericApplicationException;
 import com.assignment1.item.ItemEntity;
-import com.assignment1.item.TaxCalculator;
-import com.assignment1.item.Taxable;
+import com.assignment1.parser.CommandLineParser;
+import com.assignment1.parser.Parsable;
 import com.assignment1.parser.Valid;
 import com.assignment1.parser.Validator;
-import com.assignment1.userinterface.UserInterface;
-import com.assignment1.userinterface.UserInterfaceHandler;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
 
 /**
@@ -22,55 +22,74 @@ import java.util.List;
 @SuppressWarnings({"PMD.SystemPrintln"})
 public final class Runner {
 
-  /** ArrayList to store the Items in order to display later. */
+  /** validator Object having implementation for validation. */
+  final static Valid validator = new Validator();
+
+  /** parser object to parse the input data. */
+  final static Parsable parser = new CommandLineParser(validator);
+
+  /**
+   * ArrayList to store the Items in order to display later.
+   */
   private static final List<ItemEntity> ITEM_ARRAY = new ArrayList<>();
 
-  /** YES Constant for input as 'y' */
+  /**
+   * YES Constant for input as 'y'
+   */
   private static final String RESPONSE_YES = "y";
-  /** NO Constant for input as 'n' */
+  /**
+   * NO Constant for input as 'n'
+   */
   private static final String RESPONSE_NO = "n";
+
+  /**
+   * Constant for Usage message
+   */
+  private static final String USAGE = "\n\nEntered format is not correct.\n\n"
+          + "Showing Usage:\n\nThe correct options and values are as follows "
+          + "and type option can be any of the three values from "
+          + "[raw, manufactured, imported]."
+          + "And also, name and type are mandatory options"
+          + "-name <first item name>\n"
+          + "-price <price of first item>\n"
+          + "-quantity <quantity of first item>\n"
+          + "-type <type of first item>\n";
+
+  /** Constant of Logger type (Using Apache log4j framework */
+  private static final Logger logger = LogManager.getLogger(Runner.class);
 
   //Private Constructor so that it can't be instantiated.
   private Runner() {
   }
 
   //Method to process the input given on starting application
-  private static void processCommandLineArgs(final Valid validObj,
-                              final UserInterfaceHandler uiObj,
-                              final Taxable taxObj,
-                              final String... args) {
+  private static void processCommandLineArgs(final Parsable parser,
+                                             final String... args) {
     ItemEntity item;
-    double taxOutput;
     if (args.length > 0) {
       try {
-        item = validObj.validate(args); //Parse the initial Command Line Arguments
-        //Calculate Tax, which is the requirement according to problem statement
-        taxOutput = taxObj.calculateTax(item);
-        item.setTax(taxOutput);  //Populate the Item's tax property using setter
+        item = parser.parse(args); //Parse the initial Command Line Arguments
         ITEM_ARRAY.add(item);  //Add item to our list of items
-      } catch (RuntimeExceptionCustom e) {
-        //Show  customer how to use the application and format to give input in CLI
-        uiObj.showUsageMessage();
+      } catch (GenericApplicationException e) {
+        // Show Exception Context
+        // Show customer how to use the application and format to give input in CLI
+        logger.error(e.getMessage());
+        System.out.println(USAGE);
       }
     }
   }
 
   //Method to process the input given while running application
-  private static void processUserInterfaceArgs(final UserInterfaceHandler uiObj,
-                                               final Taxable taxObj) {
-    ItemEntity item;
-    double taxOutput;
+  private static void processUserInterfaceArgs(final Parsable parser) {
+    ItemEntity item = new ItemEntity();
     try {
-      item = uiObj.takeInput();
-      taxOutput = taxObj.calculateTax(item);
-      item.setTax(taxOutput);
+      item = parser.parse(item.read().toArray()); //Parsing the string form of DTO (item.read())
       ITEM_ARRAY.add(item);
-    } catch (InputMismatchException e) {
-      System.out.println("Your input did not match the expected format");
-    } catch (IllegalArgumentException e) {
-      System.out.println("You input did not match the expected input");
-    } catch (RuntimeExceptionCustom e) {
-      System.out.println(e.getMessage());
+    } catch (GenericApplicationException | IOException e) {
+      // Show Exception Context
+      // Show customer how to use the application and format to give input in CLI
+      logger.error(e.getMessage());
+      System.out.println(USAGE);
     }
   }
 
@@ -79,11 +98,7 @@ public final class Runner {
    */
   public static void main(final String[] args) {
 
-    final Valid validObj = new Validator(); //Object having implementation for validation
-    final UserInterfaceHandler uiObj = new UserInterface();  //Object to deal with User I/O
-    final Taxable taxObj = new TaxCalculator(); //Object for tax calculator class
-
-    processCommandLineArgs(validObj,uiObj,taxObj,args);
+    processCommandLineArgs(parser, args);
 
     String inputYesNo;
 
@@ -104,14 +119,17 @@ public final class Runner {
           break;
         }
 
-        processUserInterfaceArgs(uiObj,taxObj);
-        
+        processUserInterfaceArgs(parser);
+
       }
     } catch (IOException except) {
       System.out.println(except.getMessage());
     }
 
     System.out.println("\nThank You.. Your Item details are as follows.");
-    uiObj.giveOutput(ITEM_ARRAY);
+    System.out.println("ItemName, ItemPrice, SalesTax, ItemQuantity, FinalPrice");
+    for (final ItemEntity item : ITEM_ARRAY) {
+      item.write();
+    }
   }
 }
