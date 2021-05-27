@@ -87,20 +87,4 @@ public class ItemDTO {
             + quantity + " -type " + type;
   }
 
-  public String[] toArray() {
-    String str = "";
-    if (!"".equals(name)) {  //Adding only if not blank
-      str += "-name " + name + " ";
-    }
-    if (!"".equals(price)) {
-      str += "-price " + price + " ";
-    }
-    if (!"".equals(quantity)) {
-      str += "-quantity " + quantity + " ";
-    }
-    if (!"".equals(type)) {
-      str += "-type " + type + " ";
-    }
-    return str.split("\\s+");  //Splitting to form the required array format
-  }
 }

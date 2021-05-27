@@ -1,14 +1,19 @@
 package com.assignment1;
 
+import com.assignment1.converters.Converter;
 import com.assignment1.exceptions.GenericApplicationException;
+import com.assignment1.item.ItemDTO;
 import com.assignment1.item.ItemEntity;
 import com.assignment1.parser.CommandLineParser;
 import com.assignment1.parser.Parsable;
 import com.assignment1.parser.Valid;
 import com.assignment1.parser.Validator;
+import com.assignment1.reader.ReaderItem;
+import com.assignment1.reader.ReaderItemCLI;
+import com.assignment1.writer.WriterItem;
+import com.assignment1.writer.WriterItemCLI;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -23,10 +28,19 @@ import java.util.List;
 public final class Runner {
 
   /** validator Object having implementation for validation. */
-  final static Valid validator = new Validator();
+  private final static Valid validator = new Validator();
 
   /** parser object to parse the input data. */
-  final static Parsable parser = new CommandLineParser(validator);
+  private final static Parsable parser = new CommandLineParser(validator);
+
+  /** Reader of Item. */
+  private final static ReaderItem reader = new ReaderItemCLI();
+
+  /** Writer of Item */
+  private final static WriterItem writer = new WriterItemCLI();
+
+  /** Writer of Item */
+  private final static Converter converter = new Converter();
 
   /**
    * ArrayList to store the Items in order to display later.
@@ -63,12 +77,13 @@ public final class Runner {
   }
 
   //Method to process the input given on starting application
-  private static void processCommandLineArgs(final Parsable parser,
-                                             final String... args) {
+  private static void processCommandLineArgs(final String... args) {
     ItemEntity item;
     if (args.length > 0) {
       try {
-        item = parser.parse(args); //Parse the initial Command Line Arguments
+        // Convert Command Line Arguments to Item DTO
+        ItemDTO itemDTO = converter.strArrToItemDTO(args);
+        item = Runner.parser.parse(itemDTO); //Parse the Item DTO to Item Entity
         ITEM_ARRAY.add(item);  //Add item to our list of items
       } catch (GenericApplicationException e) {
         // Show Exception Context
@@ -80,12 +95,13 @@ public final class Runner {
   }
 
   //Method to process the input given while running application
-  private static void processUserInterfaceArgs(final Parsable parser) {
-    ItemEntity item = new ItemEntity();
+  private static void processUserInterfaceArgs() {
+    ItemEntity item;
     try {
-      item = parser.parse(item.read().toArray()); //Parsing the string form of DTO (item.read())
+      ItemDTO itemDTO = reader.read();
+      item = Runner.parser.parse(itemDTO); //Parsing the string form of DTO (item.read())
       ITEM_ARRAY.add(item);
-    } catch (GenericApplicationException | IOException e) {
+    } catch (GenericApplicationException e) {
       // Show Exception Context
       // Show customer how to use the application and format to give input in CLI
       logger.error(e.getMessage());
@@ -98,7 +114,7 @@ public final class Runner {
    */
   public static void main(final String[] args) {
 
-    processCommandLineArgs(parser, args);
+    processCommandLineArgs(args);
 
     String inputYesNo;
 
@@ -119,7 +135,7 @@ public final class Runner {
           break;
         }
 
-        processUserInterfaceArgs(parser);
+        processUserInterfaceArgs();
 
       }
     } catch (IOException except) {
@@ -129,7 +145,7 @@ public final class Runner {
     System.out.println("\nThank You.. Your Item details are as follows.");
     System.out.println("ItemName, ItemPrice, SalesTax, ItemQuantity, FinalPrice");
     for (final ItemEntity item : ITEM_ARRAY) {
-      item.write();
+      writer.write(item);
     }
   }
 }

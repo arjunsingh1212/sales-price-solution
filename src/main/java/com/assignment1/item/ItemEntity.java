@@ -1,9 +1,6 @@
 package com.assignment1.item;
 
 import com.assignment1.Type;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.math.BigDecimal;
 
 /**
@@ -166,35 +163,6 @@ public class ItemEntity {
         tax = BigDecimal.valueOf(0);
         break;
     }
-  }
-
-  /**
-   * method to read the item details and return string array for parsing
-   */
-  public ItemDTO read() throws IOException {
-    final ItemDTO itemDTO = new ItemDTO();
-    final BufferedReader bufferedReader =
-            new BufferedReader(new InputStreamReader(System.in));
-    System.out.print("Enter Name: ");
-    itemDTO.setName(bufferedReader.readLine());
-    System.out.print("Enter Price: ");
-    itemDTO.setPrice(bufferedReader.readLine());
-    System.out.print("Enter Quantity: ");
-    itemDTO.setQuantity(bufferedReader.readLine());
-    System.out.print("Enter Type: ");
-    itemDTO.setType(bufferedReader.readLine());
-    return itemDTO;
-  }
-
-  /**
-   * method to write the item details.
-   */
-  public void write() {
-    System.out.println(name
-            + ", " + price
-            + ", " + tax
-            + ", " + quantity
-            + ", " + BigDecimal.valueOf(quantity).multiply(price.add(tax)));
   }
 }
 
