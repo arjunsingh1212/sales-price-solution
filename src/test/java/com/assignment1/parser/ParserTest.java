@@ -167,6 +167,17 @@ class ParserTest {
     }
 
     @Test
+    @DisplayName("Blank value given (name blank)")
+    void parseTest6a() {
+      Exception except = assertThrows(GenericApplicationException.class, () -> parserObj.parse(
+              converter.strArrToItemDTO(toArray(
+                      "-name -price 30 -quantity 3 -type IMPORTED"))));
+      String actualMessage = except.getMessage();
+      String expectedMessage = "Invalid Name Format"; //"BlankValueException";
+      assertEquals(expectedMessage, actualMessage, "Exception should be of " + actualMessage);
+    }
+
+    @Test
     @DisplayName("Quantity datatype")
     void parseTest7() {
       Exception except = assertThrows(GenericApplicationException.class, () -> parserObj.parse(
