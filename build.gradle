@@ -1,5 +1,8 @@
 plugins {
     id 'java'
+    id 'checkstyle'
+    id 'pmd'
+    id 'jacoco'
 }
 
 group 'org.arjun.project'
@@ -12,8 +15,64 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.3'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.3'
 }
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport{
+    dependsOn test
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+    finalizedBy jacocoTestCoverageVerification
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            enabled = true
+            limit {
+                minimum = 0.2
+            }
+        }
+    }
+}
+
+configurations {
+    checkstyleConfig
+}
+
+dependencies {
+    checkstyleConfig("com.puppycrawl.tools:checkstyle:8.29") { transitive = false }
+}
+
+checkstyle {
+    toolVersion '8.29'
+    config = resources.text.fromArchiveEntry(configurations.checkstyleConfig, 'google_checks.xml')
+    ignoreFailures = true
+}
+
+//checkstyle {
+//    configFile = file("${rootDir}/config/checkstyle/checkstyle.xml")
+//}
+
+tasks.withType(Pmd){
+    reports{
+        xml.enabled=true
+        html.enabled=true
+    }
+}
+
+pmd {
+    toolVersion = '6.30.0'
+    ruleSets = []
+    ruleSetFiles = files("$rootDir/config/pmd/pmd-rules.xml")
+    ignoreFailures = true
 }
